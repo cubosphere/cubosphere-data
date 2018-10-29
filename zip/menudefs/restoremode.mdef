@@ -1,0 +1,6 @@
+print("Restoring old Video Mode");
+DEVICE_Init(GLOBAL_GetVar("ScreenWidth"),GLOBAL_GetVar("ScreenHeight"),GLOBAL_GetVar("HardwareActive"),GLOBAL_GetVar("FullScreenActive"),0); 
+
+function Precache()
+  MENU_Load("modes");
+end;
