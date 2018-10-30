@@ -31,7 +31,7 @@ TRANS_Add("font","default");
 --For a string over more than one line use \n to seperate the lines
 --To insert a backslash please use \\ and to insert a " please use \"
 
---When you've completed your language file, please send it to cubosphere@web.de 
+--When you've completed your language file, please send it to vyo@vallua.ru 
 --It will become part of the next release and your name will be in the credits
 --------------------------------------------
 
@@ -694,7 +694,7 @@ TRANS_Add("options:language","Idioma");
 TRANS_Add("options:title","Opciones");
 TRANS_Add("options:video","Opciones de video");
 TRANS_Add("quit:title","¿Estás seguro de querer salir?");
-TRANS_Add("quit:webhint","Para la última versión y más información visita: \n \ncubosphere.sourceforge.net \n \n \nPor favor valora nuestro projecto o envia comentarios a \n \n cubosphere@web.de");
+TRANS_Add("quit:webhint","Para la última versión y más información visita: \n \nhttps://github.com/cubosphere \n \n \nPor favor valora nuestro projecto o envia comentarios a \n \n vyo@vallua.ru");
 TRANS_Add("resolution:current","Actual");
 TRANS_Add("resolution:device","Dispositivo");
 TRANS_Add("resolution:fullscreen","Pantalla completa");

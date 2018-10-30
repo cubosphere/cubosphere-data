@@ -41,7 +41,8 @@ function BuildCredits()
    Line("Hydrael");
    Line("");
  DescLine(TRANS_Str("credits:programming"));
-   Line("Christian \"Exosphere\" Diddens");
+   Line("Christian \"Exosphere\" Diddens (original codebase)");
+   Line('Valeri Ochinski "v1993" (current development)');
    Line("");
 DescLine(TRANS_Str("credits:levels"));
    Line("Helix");

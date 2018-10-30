@@ -1,5 +1,5 @@
 --English language file for Cubosphere
---written by Exocube and Helix - Please report typos or mistakes to cubosphere@web.de since I'm not a native speaker
+--written by Exocube and Helix - Please report typos or mistakes to vyo@vallua.ru since I'm not a native speaker
 
 ---------------------------------------------
 --TUTORIAL FOR CREATING OWN LANGUAGE FILES--
@@ -31,7 +31,7 @@ TRANS_Add("font","default");
 --For a string over more than one line use \n to seperate the lines
 --To insert a backslash please use \\ and to insert a " please use \"
 
---When you've completed your language file, please send it to cubosphere@web.de 
+--When you've completed your language file, please send it to vyo@vallua.ru 
 --It will become part of the next release and your name will be in the credits
 --------------------------------------------
 
@@ -693,7 +693,7 @@ TRANS_Add("options:language","Language");
 TRANS_Add("options:title","Options");
 TRANS_Add("options:video","Video Options");
 TRANS_Add("quit:title","Sure want to quit?");
-TRANS_Add("quit:webhint","For the latest version and further information visit: \n \ncubosphere.sourceforge.net \n \n \nPlease rate our project or send comments to \n \n cubosphere@web.de");
+TRANS_Add("quit:webhint","For the latest version and further information visit: \n \nhttps://github.com/cubosphere \n \n \nPlease rate our project or send comments to \n \n vyo@vallua.ru");
 TRANS_Add("resolution:current","Current");
 TRANS_Add("resolution:device","Device");
 TRANS_Add("resolution:fullscreen","Fullscreen");

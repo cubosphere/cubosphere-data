@@ -664,7 +664,7 @@ TRANS_Add("options:language","Sprache");
 TRANS_Add("options:title","Optionen");
 TRANS_Add("options:video","Grafik-Optionen");
 TRANS_Add("quit:title","Wirklich beenden?");
-TRANS_Add("quit:webhint","Die neuesten Infos rund\n\num Cubosphere gibt es auf: \n \ncubosphere.sourceforge.net \n \n \n Feedback und Anmerkungen an:\n \n cubosphere@web.de");
+TRANS_Add("quit:webhint","Die neuesten Infos rund\n\num Cubosphere gibt es auf: \n \nhttps://github.com/cubosphere \n \n \n Feedback und Anmerkungen an:\n \n vyo@vallua.ru");
 TRANS_Add("resolution:current","Aktuell");
 TRANS_Add("resolution:device","Modus");
 TRANS_Add("resolution:fullscreen","Vollbildmodus");

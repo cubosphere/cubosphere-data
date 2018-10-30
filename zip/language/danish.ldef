@@ -653,7 +653,7 @@ TRANS_Add("options:language","Sprog");
 TRANS_Add("options:title","Indstillinger");
 TRANS_Add("options:video","Grafikindstillinger");
 TRANS_Add("quit:title","Virkelig afslut Cubosphere?");
-TRANS_Add("quit:webhint","Den seneste version samt yderligere information kan findes under:\n\ncubosphere.sourceforge.net\n \n\nSend venligst kommentarer angående vores projekt til:\n \ncubosphere@web.de");
+TRANS_Add("quit:webhint","Den seneste version samt yderligere information kan findes under:\n\nhttps://github.com/cubosphere\n \n\nSend venligst kommentarer angående vores projekt til:\n \nvyo@vallua.ru");
 TRANS_Add("resolution:current","Nuværende");
 TRANS_Add("resolution:device","Enhed");
 TRANS_Add("resolution:fullscreen","Fuldskærm");

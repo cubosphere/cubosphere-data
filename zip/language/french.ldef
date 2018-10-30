@@ -669,7 +669,7 @@ TRANS_Add("options:language","Langue");
 TRANS_Add("options:title","Options");
 TRANS_Add("options:video","Options vidéo");
 TRANS_Add("quit:title","Voulez-vous vraiment quitter ?");
-TRANS_Add("quit:webhint","Pour plus d'informations, visitez le site : \n \ncubosphere.sourceforge.net \n \n \nVous pouvez noter notre projet et envoyer des commentaires à : \n \n cubosphere@web.de");
+TRANS_Add("quit:webhint","Pour plus d'informations, visitez le site : \n \nhttps://github.com/cubosphere \n \n \nVous pouvez noter notre projet et envoyer des commentaires à : \n \n vyo@vallua.ru");
 TRANS_Add("resolution:current","Actuelle");
 TRANS_Add("resolution:device","Accélération ");
 TRANS_Add("resolution:fullscreen","Plein écran ");
