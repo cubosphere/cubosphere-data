@@ -1,4 +1,4 @@
-# cubosphere [reborn] — data repository
+# Cubosphere [reborn] — data repository
 This repo contain data files for cubosphere. Pretty useless without code.
 
 ## How build system works?
