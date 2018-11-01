@@ -1,3 +1,3 @@
 if(UNIX OR FORCE_DESKTOP)
-	install(DIRECTORY applications icons DESTINATION "${CMAKE_INSTALL_FULL_BINDIR}")
+	install(DIRECTORY applications icons DESTINATION "${CMAKE_INSTALL_FULL_DATADIR}")
 endif()
