@@ -27,3 +27,5 @@ create_zip("${CMAKE_CURRENT_BINARY_DIR}/native_data.zip" "${ZIP_FILES}" "${CMAKE
 
 install(FILES "${CMAKE_CURRENT_BINARY_DIR}/native_data.zip" DESTINATION ${DATADIR} RENAME "data000.zip") # Install zip
 add_custom_target("cubosphere-data" ALL DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/native_data.zip")
+
+add_subdirectory(desktop)
