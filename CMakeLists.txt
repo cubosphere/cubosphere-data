@@ -20,12 +20,12 @@ foreach(ITEM ${RAW_FILES_DIRS})
    ENDIF()
 endforeach()
 
-install(FILES ${RAW_FILES} DESTINATION ${DATADIR}) # Install unpacked files
-install(DIRECTORY ${RAW_DIRS} DESTINATION ${DATADIR}) # Install unpacked files
+install(FILES ${RAW_FILES} DESTINATION ${DATADIR} COMPONENT DATA) # Install unpacked files
+install(DIRECTORY ${RAW_DIRS} DESTINATION ${DATADIR} COMPONENT DATA) # Install unpacked files
 
 create_zip("${CMAKE_CURRENT_BINARY_DIR}/native_data.zip" "${ZIP_FILES}" "${CMAKE_CURRENT_SOURCE_DIR}/zip")
 
-install(FILES "${CMAKE_CURRENT_BINARY_DIR}/native_data.zip" DESTINATION ${DATADIR} RENAME "data000.zip") # Install zip
+install(FILES "${CMAKE_CURRENT_BINARY_DIR}/native_data.zip" DESTINATION ${DATADIR} RENAME "data000.zip" COMPONENT DATA) # Install zip
 add_custom_target("cubosphere-data" ALL DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/native_data.zip")
 
 add_subdirectory(desktop)
