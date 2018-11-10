@@ -253,7 +253,7 @@ TRANS_Add("editor:blocktype:hint","Skift blok til: ");
 TRANS_Add("editor:blocktype:title","Vælg bloktype");
 TRANS_Add("editor:caption:blocktype","Bloktype");
 TRANS_Add("editor:caption:f1forhelp","tryk F1 for hjælp");
-TRANS_Add("editor:caption:helpfunc","HJÆLP (F1 for at skjule):\n\n\nFlyt markøren\nBevæg kameraet\nKig rundt\nPlacer/flyt blok\nVælg bloktype\nSlet blok\nAnvend bloktype til blok/side\nMarker side\nAnvend bloktype til side\nTilføj/udskift objekt på den markerede side\nKopier bloktype ved markøren\nAngiv spillerens startposition\nRedigér sideegenskaber\nTilføj/udskift fjende\n\n\nSe editormanual.pdf for yderligere information");
+TRANS_Add("editor:caption:helpfunc","HJÆLP (F1 for at skjule):\n\n\nFlyt markøren\nBevæg kameraet\nKig rundt\nPlacer/flyt blok\nVælg bloktype\nSlet blok\nAnvend bloktype til blok/side\nMarker side\nAnvend bloktype til side\nTilføj/udskift objekt på den markerede side\nKopier bloktype ved markøren\nAngiv spillerens startposition\nRedigér sideegenskaber\nTilføj/udskift fjende\n\n\nBesøg github.com/cubosphere/cubosphere-code/wiki for detaljer");
 TRANS_Add("editor:caption:helpkeys","\n \n\nw,s,d,a,q,e\nPiletaster\nBevæg musen\nMellemrum (space)\nb\nSlettetast (backspace)\nEnter\nVenstre klik\nHøjre klik\ni\nTab\np\nv\no");
 TRANS_Add("editor:caption:selectedsideid","Den markerede sides ID");
 TRANS_Add("editor:enemy:changetype","Skift type/fjern");

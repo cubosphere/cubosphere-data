@@ -276,7 +276,7 @@ TRANS_Add("editor:blocktype:hint","Changes Block to ");
 TRANS_Add("editor:blocktype:title","Select Block-Type");
 TRANS_Add("editor:caption:blocktype","Block-Type");
 TRANS_Add("editor:caption:f1forhelp","press F1 for help");
-TRANS_Add("editor:caption:helpfunc","HELP (F1 to hide):\n \n \nMove Cursor\nMove Camera\nLook around\nCreate/Move Block\nSelect block type\nDelete Block\nApply block type to block/side\nSelect side\nApply blocktype to side\nChange item on selected side\nCopy block type at crosshair\nSet player's start position\nEdit side attributes\nEdit Enemy\n \n \nSee editormanual.pdf for further explanation");
+TRANS_Add("editor:caption:helpfunc","HELP (F1 to hide):\n \n \nMove Cursor\nMove Camera\nLook around\nCreate/Move Block\nSelect block type\nDelete Block\nApply block type to block/side\nSelect side\nApply blocktype to side\nChange item on selected side\nCopy block type at crosshair\nSet player's start position\nEdit side attributes\nEdit Enemy\n \n \nSee github.com/cubosphere/cubosphere-code/wiki for more information");
 TRANS_Add("editor:caption:helpkeys"," \n \n \nw,s,d,a,q,e\nArrow Keys\nMouse Move\nSpace\nb\nBackspace\nEnter\nLeft Click\nRight Click\ni\nTab\np\nv\no");
 TRANS_Add("editor:caption:selectedsideid","Selected sides's ID");
 TRANS_Add("editor:enemy:changetype","Change type/Remove");
