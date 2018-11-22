@@ -72,6 +72,46 @@ blocktype="normal1";
 
 darkbg=-1;
 
+local menu_sections = {
+	continue = 0,
+	settings = 1,
+	new = 2,
+	load = 3,
+	save = 4,
+	manual = 5,
+	overview = 6,
+	test = 7,
+	quit = 8
+}
+
+local menu_length = 9
+
+local manual_url = 'https://github.com/cubosphere/cubosphere-code/wiki'
+
+local open_cmd -- this needs to stay outside the function, or it'll re-sniff every time...
+function open_url(url) -- It's from StackOverflow
+    if not open_cmd then
+        if package.config:sub(1,1) == '\\' then -- windows
+            open_cmd = function(url)
+                -- Should work on anything since (and including) win'95
+                os.execute(string.format('start "%s"', url))
+            end
+        -- the only systems left should understand uname...
+        elseif (io.popen("uname -s"):read'*a') == "Darwin" then -- OSX/Darwin ? (I can not test.)
+            open_cmd = function(url)
+                -- I cannot test, but this should work on modern Macs.
+                os.execute(string.format('open "%s"', url))
+            end
+        else -- that ought to only leave Linux
+            open_cmd = function(url)
+                -- should work on X-based distros.
+                os.execute(string.format('xdg-open "%s"', url))
+            end
+        end
+    end
+
+    open_cmd(url)
+end
 
 function CheckDefExchange(defname,typestr)
  --Check older versions --TODO:Remove soon
@@ -777,22 +817,22 @@ function OnKeyPressed(key,down,toggle)
      --LEVEL_SetTimeScale(1);
    elseif (keyn=="down arrow") then
      SOUND_Play(snd_nav,-1);
-     MenuSelection=math.mod((MenuSelection+1),8);
+     MenuSelection=math.mod((MenuSelection+1),menu_length);
    elseif (keyn=="up arrow") then
      SOUND_Play(snd_nav,-1);
      MenuSelection=MenuSelection-1;
      if MenuSelection<0 then
-       MenuSelection=7;
+       MenuSelection = menu_length-1;
      end;
    elseif (keyn=="space") or (keyn=="return") then
      SOUND_Play(snd_sel,-1);
-     if MenuSelection==0 then
+     if MenuSelection == menu_sections.continue then
        InScene="editing";
        GLOBAL_SetVar("EditorTool","Editing");
        menuactive=0;
        drawmenu=1;
        --LEVEL_SetTimeScale(1);
-     elseif MenuSelection==4 then
+     elseif MenuSelection == menu_sections.save then
        --SaveToFile("Bla");
        --print("SAVED");
         CheckStartPos(); 
@@ -819,7 +859,7 @@ function OnKeyPressed(key,down,toggle)
        menuactive=1;
        drawmenu=0;
        GetKeys=0;
-     elseif MenuSelection==3 then
+     elseif MenuSelection == menu_sections.load then
        
       --LEVEL_Deactivate();
        
@@ -836,7 +876,7 @@ function OnKeyPressed(key,down,toggle)
        menuactive=1;
        drawmenu=0;
        GetKeys=0;
-    elseif MenuSelection==2 then
+    elseif MenuSelection == menu_sections.new then
        
        --LEVEL_Deactivate();
        
@@ -849,7 +889,7 @@ function OnKeyPressed(key,down,toggle)
        else
          
          GLOBAL_SetVar("Editor_DesiredMenu","editornew");
-         drawmenu=0;          
+         drawmenu=0;
          GetKeys=0;
          GLOBAL_SetVar("EditorTool","SaveChanges");
          MENU_Load("editorsavechanges");
@@ -859,7 +899,7 @@ function OnKeyPressed(key,down,toggle)
        menuactive=1;
        drawmenu=0;  
        GetKeys=0;
-    elseif MenuSelection==1 then
+    elseif MenuSelection == menu_sections.settings then
        
       -- CheckStartPos(); 
       --  if GLOBAL_GetVar("Editor_StartpointValid")==0 then
@@ -889,7 +929,7 @@ function OnKeyPressed(key,down,toggle)
         MENU_Activate();
         MENU_Activate();
         MENU_Load("startgame"); ]]
-    elseif MenuSelection==5 or MenuSelection==6 then
+    elseif MenuSelection == menu_sections.overview or MenuSelection == menu_sections.test then
        --Testing
         CheckStartPos();
         if GLOBAL_GetVar("Editor_StartpointValid")==0 then
@@ -906,7 +946,7 @@ function OnKeyPressed(key,down,toggle)
        GLOBAL_SetVar("Editor_Changed",changed);
         
        SaveToFile("_selection");
-       if MenuSelection==6 then 
+       if MenuSelection == menu_sections.test then 
          GLOBAL_SetVar("EditorMode",2); -- 2 Means testing
        else
          GLOBAL_SetVar("EditorMode",3); -- Overview
@@ -921,7 +961,7 @@ function OnKeyPressed(key,down,toggle)
        
        MENU_Load("startgame");       
        GetKeys=0;
-    elseif MenuSelection==7 then
+    elseif MenuSelection == menu_sections.quit then
        
        if changed==1 then  
          menuactive=1;
@@ -938,6 +978,8 @@ function OnKeyPressed(key,down,toggle)
        --LEVEL_Deactivate();
        MENU_Activate();
        
+	elseif MenuSelection == menu_sections.manual then
+		open_url(manual_url)
      end;
    end;
 
@@ -946,7 +988,7 @@ end;
 
 
 function RenderMenuString(i,text,ypos)
- if MenuSelection==i then
+ if MenuSelection == i then
    MATERIAL_SetColor(COLOR_New(0.95,0.95,0.0,1));
    FONT_SetSize(0.04);
  else
@@ -991,15 +1033,15 @@ FONT_Begin();
  FONT_SetAlign("center","center");
  FONT_Goto(0,0.25);
  FONT_TextOut(TRANS_Str("editormenu:title"));
- RenderMenuString(0,TRANS_Str("editormenu:continue"),0.0);
- RenderMenuString(1,TRANS_Str("editormenu:levelsettings"),-0.05);
-
- RenderMenuString(2,TRANS_Str("editormenu:new"),-0.1);
-RenderMenuString(3,TRANS_Str("editormenu:load"),-0.15);
-RenderMenuString(4,TRANS_Str("editormenu:save"),-0.2);
-RenderMenuString(5,TRANS_Str("editormenu:overview"),-0.25);
-RenderMenuString(6,TRANS_Str("editormenu:test"),-0.3);
-RenderMenuString(7,TRANS_Str("editormenu:quit"),-0.35);
+ RenderMenuString(menu_sections.continue, TRANS_Str("editormenu:continue"),0.0);
+ RenderMenuString(menu_sections.settings, TRANS_Str("editormenu:levelsettings"),-0.05);
+ RenderMenuString(menu_sections.new, TRANS_Str("editormenu:new"),-0.1);
+RenderMenuString(menu_sections.load, TRANS_Str("editormenu:load"),-0.15);
+RenderMenuString(menu_sections.save, TRANS_Str("editormenu:save"),-0.2);
+RenderMenuString(menu_sections.manual, TRANS_Str("editormenu:manual"),-0.25);
+RenderMenuString(menu_sections.overview, TRANS_Str("editormenu:overview"),-0.3);
+RenderMenuString(menu_sections.test, TRANS_Str("editormenu:test"),-0.35);
+RenderMenuString(menu_sections.quit, TRANS_Str("editormenu:quit"),-0.4);
  FONT_End();
 end;
 
