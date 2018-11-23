@@ -837,7 +837,6 @@ function OnKeyPressed(key,down,toggle)
        GLOBAL_SetVar("EditorTool","Editing");
        menuactive=0;
        drawmenu=1;
-	   MOUSE_Snap(1);
        --LEVEL_SetTimeScale(1);
      elseif MenuSelection == menu_sections.save then
        --SaveToFile("Bla");
@@ -966,7 +965,7 @@ function OnKeyPressed(key,down,toggle)
        GLOBAL_SetVar("TwoPlayers",0);
        MENU_Activate();
        
-       MENU_Load("startgame");       
+       MENU_Load("startgame");
        GetKeys=0;
     elseif MenuSelection == menu_sections.quit then
        
