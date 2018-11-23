@@ -819,7 +819,6 @@ function OnKeyPressed(key,down,toggle)
      continue_editing();
      GLOBAL_SetVar("EditorTool","Editing");
      menuactive=0;
-	 MOUSE_Snap(1);
      --LEVEL_SetTimeScale(1);
    elseif (keyn=="down arrow") then
      SOUND_Play(snd_nav,-1);
