@@ -272,7 +272,7 @@ TRANS_Add("editor:blocktype:hint","Choisir le type : ");
 TRANS_Add("editor:blocktype:title","Type de bloc");
 TRANS_Add("editor:caption:blocktype","Type de bloc ");
 TRANS_Add("editor:caption:f1forhelp","Appuyez sur F1 pour l'aide");
-TRANS_Add("editor:caption:helpfunc","AIDE (F1 pour fermer):\n \n \nBouger le curseur\nBouger la caméra\nRegarder autour\nCréer et déplacer des blocs\nSélectionner un type de bloc\nSupprimer un bloc\nAppliquer le type de bloc à la sélection\nSélectionner une face\nAppliquer le type de bloc à la face\nChoisir l'objet de la face\nCopier le type de bloc sur le curseur de souris\nChanger la position du joueur\nModifier les propriétés de la face\nChoisir l'ennemi de la face\n \n \nVisitez github.com/cubosphere/cubosphere-code/wiki pour plus de détails");
+TRANS_Add("editor:caption:helpfunc","AIDE (F1 pour fermer):\n \n \nBouger le curseur\nBouger la caméra\nRegarder autour\nCréer et déplacer des blocs\nSélectionner un type de bloc\nSupprimer un bloc\nAppliquer le type de bloc à la sélection\nSélectionner une face\nAppliquer le type de bloc à la face\nChoisir l'objet de la face\nCopier le type de bloc sur le curseur de souris\nChanger la position du joueur\nModifier les propriétés de la face\nChoisir l'ennemi de la face\n \n \nVoir le manuel en ligne pour plus d'informations");
 TRANS_Add("editor:caption:helpkeys"," \n \n \nw,s,d,a,q,e\nTouches fléchées\nSouris\nEspace\nb\nRetour arrière\nEntrée\nClic gauche\nClic droit\ni\nTab\np\nv\no");
 TRANS_Add("editor:caption:selectedsideid","ID de la face sélectionnée ");
 TRANS_Add("editor:enemy:changetype","Changer le type / Supprimer");
@@ -325,6 +325,10 @@ TRANS_Add("editormenu:quit","Quitter");
 TRANS_Add("editormenu:save","Sauvegarder");
 TRANS_Add("editormenu:test","Tester le niveau");
 TRANS_Add("editormenu:title","Menu de l'éditeur");
+
+TRANS_Add("editormenu:manual","Manuel en ligne (anglais)");
+-- TRANS_Add("editor:manual_url","Use to change link to manual");
+
 TRANS_Add("editor:music:hint","Changer la musique : ");
 TRANS_Add("editor:music:title","Musique");
 TRANS_Add("editor:newlevel","Nouveau niveau");

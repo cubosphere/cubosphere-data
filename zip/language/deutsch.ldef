@@ -247,7 +247,7 @@ TRANS_Add("editor:blocktype:hint","Wähle den Block ");
 TRANS_Add("editor:blocktype:title","Wähle eine Block/Feld-Art");
 TRANS_Add("editor:caption:blocktype","Block-/Feld-Typ");
 TRANS_Add("editor:caption:f1forhelp","Drücke F1 für Hilfe");
-TRANS_Add("editor:caption:helpfunc","HILFE (F1 zum schließen):\n \n \nCursor bewegen\nKamera bewegen\nUmschauen\nBlock erstellen/bewegen\nBlock-Art wählen\nBlock löschen\nBlock/Feld-Art setzen\nSeite wählen\nSetze Feld-Typ\nItem setzen\nAnvisierten Feld-Typ kopieren\nStart-Position setzen\nFeld-Eigenschaften einstellen\nGegner hinzufügen/bearbeiten\n \n \nWeitere Informationen finden Sie unter github.com/cubosphere/cubosphere-code/wiki");
+TRANS_Add("editor:caption:helpfunc","HILFE (F1 zum schließen):\n \n \nCursor bewegen\nKamera bewegen\nUmschauen\nBlock erstellen/bewegen\nBlock-Art wählen\nBlock löschen\nBlock/Feld-Art setzen\nSeite wählen\nSetze Feld-Typ\nItem setzen\nAnvisierten Feld-Typ kopieren\nStart-Position setzen\nFeld-Eigenschaften einstellen\nGegner hinzufügen/bearbeiten\n \n \nWeitere Informationen finden Sie im Online-Handbuch");
 TRANS_Add("editor:caption:helpkeys"," \n \n \nw,s,d,a,q,e\nPfeiltasten\nMaus bewegen\nLeertaste\nb\nRücktaste\nEingabe\nLinksklick\nRechtsklick\ni\nTabulator\np\nv\no");
 TRANS_Add("editor:caption:selectedsideid","ID der gewählten Seite");
 TRANS_Add("editor:enemy:changetype","Typ ändern/Entfernen");
@@ -300,6 +300,10 @@ TRANS_Add("editormenu:quit","Beenden");
 TRANS_Add("editormenu:save","Speichern");
 TRANS_Add("editormenu:test","Level testen");
 TRANS_Add("editormenu:title","Editor-Menü");
+
+TRANS_Add("editormenu:manual","Online-Handbuch (Englisch)");
+-- TRANS_Add("editor:manual_url","Use to change link to manual");
+
 TRANS_Add("editor:music:hint","Wähle ");
 TRANS_Add("editor:music:title","Musik");
 TRANS_Add("editor:newlevel","Neues Level");

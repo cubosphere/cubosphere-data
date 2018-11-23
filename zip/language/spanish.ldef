@@ -276,7 +276,7 @@ TRANS_Add("editor:blocktype:hint","Cambia bloque a ");
 TRANS_Add("editor:blocktype:title","Elije tipo de bloque");
 TRANS_Add("editor:caption:blocktype","Tipo de bloque");
 TRANS_Add("editor:caption:f1forhelp","pulsa F1 para ayuda");
-TRANS_Add("editor:caption:helpfunc","HELP (F1 to hide):\n \n \nMover cursor\nMover cámara\nMirar alrededor\nCrear/Mover Bloque\nElegir tipo de bloque\nBorrar bloque\nAplicar tipo de bloque al bloque/lado\nElegir lado\nAplicar tipo de bloque al lado\nCambiar elemento del lado seleccionado\nCopiar tipo de bloque en el punto de mira\nDefine la posición inicial del jugador\nEdita los atributos del lado\nEdita al Enemigo\n \n \nVisite github.com/cubosphere/cubosphere-code/wiki para obtener detalles");
+TRANS_Add("editor:caption:helpfunc","HELP (F1 to hide):\n \n \nMover cursor\nMover cámara\nMirar alrededor\nCrear/Mover Bloque\nElegir tipo de bloque\nBorrar bloque\nAplicar tipo de bloque al bloque/lado\nElegir lado\nAplicar tipo de bloque al lado\nCambiar elemento del lado seleccionado\nCopiar tipo de bloque en el punto de mira\nDefine la posición inicial del jugador\nEdita los atributos del lado\nEdita al Enemigo\n \n \nConsulte el manual en línea para más información");
 TRANS_Add("editor:caption:helpkeys"," \n \n \nw,s,d,a,q,e\nArrow Keys\nMouse Move\nSpace\nb\nBackspace\nEnter\nLeft Click\nRight Click\ni\nTab\np\nv\no");
 TRANS_Add("editor:caption:selectedsideid","ID de las lados elegido");
 TRANS_Add("editor:enemy:changetype","Cambiar tipo/Quitar");
@@ -329,6 +329,10 @@ TRANS_Add("editormenu:quit","Salir");
 TRANS_Add("editormenu:save","Salvar");
 TRANS_Add("editormenu:test","Comprobar nivel");
 TRANS_Add("editormenu:title","Editor del Menu");
+
+TRANS_Add("editormenu:manual","Manual online (inglés)");
+-- TRANS_Add("editor:manual_url","Use to change link to manual");
+
 TRANS_Add("editor:music:hint","Elegir ");
 TRANS_Add("editor:music:title","Música");
 TRANS_Add("editor:newlevel","Nuevo nivel");
