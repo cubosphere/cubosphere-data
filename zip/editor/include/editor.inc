@@ -86,10 +86,10 @@ local menu_sections = {
 
 local menu_length = 9
 
-local manual_url = 'https://github.com/cubosphere/cubosphere-code/wiki'
+local manual_url = TRANS_StrD('editor:manual_url', 'https://github.com/cubosphere/cubosphere-code/wiki')
 
 local open_cmd -- this needs to stay outside the function, or it'll re-sniff every time...
-function open_url(url) -- It's from StackOverflow
+local function open_url(url) -- It's from StackOverflow
     if not open_cmd then
         if package.config:sub(1,1) == '\\' then -- windows
             open_cmd = function(url)
@@ -111,6 +111,11 @@ function open_url(url) -- It's from StackOverflow
     end
 
     open_cmd(url)
+end
+
+local function continue_editing()
+	MOUSE_Snap(1)
+	InScene="editing"
 end
 
 function CheckDefExchange(defname,typestr)
@@ -423,13 +428,13 @@ function Think()
          print(GLOBAL_GetVar("Editor_DesiredMenu"));   
          return;
        end;
-       InScene="editing";
+       continue_editing();
     elseif cmd=="NoSave" then
          GetKeys=1;
-         InScene="editing";
+         continue_editing();
          GLOBAL_SetVar("EditorToolCommand","");
     elseif cmd=="return" then
-       InScene="editing";
+       continue_editing();
        drawmenu=1;
        GetKeys=1;
     elseif cmd=="changed" then
@@ -801,7 +806,7 @@ function OnKeyPressed(key,down,toggle)
       MenuSelection=0;
       GLOBAL_SetVar("EditorTool","EditorMenu");
       menuactive=1;
-      LEVEL_SetTimeScale(0);
+	  MOUSE_Snap(0);
    else
       ---CHECK EDITOR KEYS
  
@@ -811,9 +816,10 @@ function OnKeyPressed(key,down,toggle)
  elseif ((InScene=="pause") and (toggle==1)) then
    if keyn=="escape" then
      SOUND_Play(snd_sel,-1);
-     InScene="editing";
+     continue_editing();
      GLOBAL_SetVar("EditorTool","Editing");
      menuactive=0;
+	 MOUSE_Snap(1);
      --LEVEL_SetTimeScale(1);
    elseif (keyn=="down arrow") then
      SOUND_Play(snd_nav,-1);
@@ -827,10 +833,11 @@ function OnKeyPressed(key,down,toggle)
    elseif (keyn=="space") or (keyn=="return") then
      SOUND_Play(snd_sel,-1);
      if MenuSelection == menu_sections.continue then
-       InScene="editing";
+       continue_editing();
        GLOBAL_SetVar("EditorTool","Editing");
        menuactive=0;
        drawmenu=1;
+	   MOUSE_Snap(1);
        --LEVEL_SetTimeScale(1);
      elseif MenuSelection == menu_sections.save then
        --SaveToFile("Bla");
