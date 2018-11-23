@@ -1003,7 +1003,7 @@ function RenderMenuString(i,text,ypos)
    FONT_SetSize(0.03);
    
  end;
-   FONT_Goto(0,ypos);
+   FONT_Goto(0,ypos+0.1);
    FONT_TextOut(text);
  end;
 
