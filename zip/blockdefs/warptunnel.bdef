@@ -39,15 +39,13 @@ end;
 function Precache()
  editortexture=TEXDEF_Load("warp_in_editor");
 
--- effect=TEXTURE_LoadWithAlpha("warptunnel","warptunnel_a");
-
 mdl=MDLDEF_Load("warptunnel");
 
  sound=SOUND_Load("timewarp");
- GLOBAL_SetVar("WarpZoneLogo",TEXTURE_LoadWithAlpha("warplogo","warplogo_a"));
+ GLOBAL_SetVar("WarpZoneLogo",TEXTURE_Load("warplogo"));
 
- secretback=TEXTURE_LoadWithAlpha("secretback","warpback_a");
- normalback=TEXTURE_LoadWithAlpha("warpback","warpback_a");
+ secretback=TEXTURE_Load("secretback");
+ normalback=TEXTURE_Load("warpback");
 
  GLOBAL_SetVar("WarpZoneTexture",normalback);
 
