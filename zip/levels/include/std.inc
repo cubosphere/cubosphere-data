@@ -1097,8 +1097,8 @@ if GLOBAL_GetVar("EditorMode")~=3 then
  SOUND_Play(snd_start,-1);
 end;
  
-key_missing=TEXTURE_LoadWithAlpha("key_missing","key_alpha");
- key_collected=TEXTURE_LoadWithAlpha("key_collected","key_alpha");
+key_missing=TEXTURE_Load("key_missing");
+ key_collected=TEXTURE_Load("key_collected");
  
  darkbg=TEXDEF_Load("darkbg");
  screenflash=TEXDEF_Load("screenflash");
