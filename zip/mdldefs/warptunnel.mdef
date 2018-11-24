@@ -4,8 +4,8 @@ secrettexture=-1;
 
 function Precache()
   model=MODEL_LoadOBJ("warptunnel");
-  texture=TEXTURE_LoadWithAlpha("warptunnel","warptunnel_a");
-  secrettexture=TEXTURE_LoadWithAlpha("secrettunnel","warptunnel_a");
+  texture=TEXTURE_Load("warptunnel");
+  secrettexture=TEXTURE_Load("secrettunnel");
 
 --MDLDEF_CreateRenderList(-1); 
 end; 
