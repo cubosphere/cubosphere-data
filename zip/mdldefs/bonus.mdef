@@ -6,7 +6,7 @@ warp=-1;
 --This function is called once, when this file is loaded
 function Precache()
   model=MODEL_LoadOBJ("bonus");          --Load warp.obj and store the reference to it in the global variable <model>
-  warp=TEXTURE_LoadSkyTexture("bonus");  --Load warp.jpg out of the skyboxes/test_warp/ and reference it by <warp>
+  warp=TEXTURE_LoadSkyTexture("bonus");  --Load warp.png out of the skyboxes/test_warp/ and reference it by <warp>
 
 end; 
 

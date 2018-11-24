@@ -76,7 +76,8 @@ function OnNavigate(dir)
  if NumEntries==0 then
    return;
  end;
-  local svname="/user/levels/"..Entries[Selected+1]..".jpg";
+  local svname="/user/levels/"..Entries[Selected+1]..".png";
+  if FILESYS_FileExists(svname) == 0 then svname="/user/levels/"..Entries[Selected+1]..".jpg" end
   if FILESYS_FileExists(svname)==1 then
     
     tinxed=TEXTURE_LoadTempTexture("_levelpreview",svname); 

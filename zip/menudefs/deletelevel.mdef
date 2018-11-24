@@ -34,6 +34,7 @@ end;
 
 function DeleteLevel(lvl)
   DeleteFile("/user/levels/"..lvl..".ldef");
+  DeleteFile("/user/levels/"..lvl..".png");
   DeleteFile("/user/levels/"..lvl..".jpg");
 end;
 

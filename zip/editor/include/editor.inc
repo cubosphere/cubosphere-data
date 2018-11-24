@@ -207,7 +207,7 @@ function SaveToFile(name)
     GLOBAL_SetVar("RenderingPrevPic",0);
     
 
-    svname="/user/levels/"..GLOBAL_GetVar("Editor_SaveFileName")..".jpg";
+    svname="/user/levels/"..GLOBAL_GetVar("Editor_SaveFileName")..".png";
     DEVICE_SaveFramePic(svname,prevpicW,prevpicH);
     DEVICE_Viewport(GLOBAL_GetVar("ScreenWidth"),GLOBAL_GetVar("ScreenHeight"));
  
