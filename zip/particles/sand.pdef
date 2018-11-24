@@ -7,7 +7,7 @@ texture=-1;
 
 function Precache(defindex)
 
- texture=TEXTURE_LoadWithAlpha("particle","particle_alpha");
+ texture=TEXTURE_Load("particle");
  
  sprite1=EMITTER_NewSpriteType(defindex,texture);
  SPRITETYPE_SetLifeTime(sprite1,0.4);

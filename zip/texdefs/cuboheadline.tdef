@@ -30,7 +30,7 @@ function Precache()
  for i=1,numletters,1 do
    local mode=Modes[i];
    if gold==1 then mode="gold"; end;
-   LetterTextures[i]=TEXTURE_LoadWithAlpha("headline/"..Letters[i].."_"..mode,"headline/"..Letters[i].."_a");
+   LetterTextures[i]=TEXTURE_Load("headline/"..Letters[i].."_"..mode);
 
  end;
 end;

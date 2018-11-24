@@ -23,7 +23,7 @@ function Precache()
      texture_array[1]=TEXTURE_Load("magnet_ns_t2");
      texture_array[2]=TEXTURE_Load("magnet_ns_t3");
   end
-  effecttex=TEXTURE_LoadWithAlpha("white","magnet_eff_a");
+  effecttex=TEXTURE_Load("magnet_eff");
  texture_inside=TEXTURE_Load("magnetinner");
 end; 
 
