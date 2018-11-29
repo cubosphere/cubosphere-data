@@ -20,7 +20,7 @@ oEntries={};
 
 
 
-function SortEntries()
+function SortEntries() -- FIXME: bubble sort?!
  for i=1,NumEntries-1,1 do
    for j=i+1,NumEntries,1 do
    -- print("Sorting "..i.."  "..j);
@@ -40,7 +40,7 @@ function BuildEntries()
  Entries={};
  Hints={};
  oEntries={};
- local numthemes=FILESYS_StartListDirectory("/music/",true,false,false,false,"*.mp3"); 
+ local numthemes=FILESYS_StartListDirectory("/music/",true,false,false,false,".*\\.mp3"); 
  for index = 0, numthemes-1, 1 do
    oEntries[index+1]=string.sub(FILESYS_GetListDirectoryEntry(index),1,string.len(FILESYS_GetListDirectoryEntry(index))-4);
    Entries[index+1]=TRANS_StrD("music:"..oEntries[index+1],oEntries[index+1]);

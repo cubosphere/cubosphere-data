@@ -94,7 +94,7 @@ function BuildEntries()
 
  freeskips=2;
 
- local numulvl=FILESYS_StartListDirectory("/levels/"..Folders[episode].."/",true,false,false,false,"*.ldef"); 
+ local numulvl=FILESYS_StartListDirectory("/levels/"..Folders[episode].."/",true,false,false,false,".*\\.ldef"); 
  local counter=0;
  local firstskipped=-1;
  

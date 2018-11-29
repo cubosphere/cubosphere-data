@@ -1,5 +1,5 @@
 USING("FILESYS")
- local numulvl=FILESYS_StartListDirectory("/levels/",true,false,true,false,"*.ldef");
+ local numulvl=FILESYS_StartListDirectory("/levels/",true,false,true,false,".*\\.ldef");
  local counter=0;
  for index = 0, numulvl-1, 1 do
    s=FILESYS_GetListDirectoryEntry(index);

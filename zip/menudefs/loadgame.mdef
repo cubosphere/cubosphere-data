@@ -22,7 +22,7 @@ function AddSingleLevel(ln)
 end;
 
 function AddEpisodePart(fold,tn)
-   local numulvl=FILESYS_StartListDirectory("/levels/"..fold.."/",true,false,false,false,"*.ldef"); 
+   local numulvl=FILESYS_StartListDirectory("/levels/"..fold.."/",true,false,false,false,".*\\.ldef"); 
     for index = 0, numulvl-1, 1 do
         local f=FILESYS_GetListDirectoryEntry(index);
         f=string.sub(f,1,string.len(f)-5);
@@ -52,7 +52,7 @@ function BuildEntries()
  Entries={};
  Hints={};
  local cind=1;
- local numsvs=FILESYS_StartListDirectory("/user/saves/"..GLOBAL_GetVar("CurrentEpisode").."/",true,false,false,false,"*.sdef"); 
+ local numsvs=FILESYS_StartListDirectory("/user/saves/"..GLOBAL_GetVar("CurrentEpisode").."/",true,false,false,false,".*\\.sdef"); 
  local fnames={};
   for index = 0, numsvs-1, 1 do
     fnames[index]=string.sub(FILESYS_GetListDirectoryEntry(index),1,string.len(FILESYS_GetListDirectoryEntry(index))-5);

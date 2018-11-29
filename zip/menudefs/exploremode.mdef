@@ -63,7 +63,7 @@ function BuildEntries()
      local istr=string.format(TRANS_Str("explore:hint:episode"),i);
      Hints[i]=istr..Entries[i];
 
-     local numulvl=FILESYS_StartListDirectory("/levels/"..Folders[i].."/",true,false,false,false,"*.ldef"); 
+     local numulvl=FILESYS_StartListDirectory("/levels/"..Folders[i].."/",true,false,false,false,".*\\.ldef"); 
      local CompletedLevels=0;
      local TotalLevels=0;
      local TotalScore=0;

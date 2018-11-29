@@ -49,7 +49,7 @@ end;
 
 
 function MountAllZips()
- local numf=FILESYS_StartListDirectory("/",true,false,false,true,"*data*.zip"); --List root dir, list files, no dirs, not recursive, get the fullpath, filter *.zip
+ local numf=FILESYS_StartListDirectory("/",true,false,false,true,".*data.*\\.zip"); --List root dir, list files, no dirs, not recursive, get the fullpath, filter *.zip
  for i=0,numf-1,1 do
    local zipfile=FILESYS_GetListDirectoryEntry(i);
    if FILESYS_MountZip(zipfile,"/")~=0 then

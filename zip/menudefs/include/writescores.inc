@@ -7,7 +7,7 @@ scores=SCORE_Open(confdir.."/scores.cdef");
 
 if scores~=0 then
 
- local numulvl=FILESYS_StartListDirectory("/levels/",true,false,true,false,"*.ldef");
+ local numulvl=FILESYS_StartListDirectory("/levels/",true,false,true,false,".*\\.ldef");
  --print("NUM "..numulvl);
  local counter=0;
  for index = 0, numulvl-1, 1 do

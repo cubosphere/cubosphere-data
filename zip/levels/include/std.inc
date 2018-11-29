@@ -1003,7 +1003,7 @@ function AddSingleLevel(ln)
 end;
 
 function AddEpisodePart(fold,tn)
-   local numulvl=FILESYS_StartListDirectory("/levels/"..fold.."/",true,false,false,false,"*.ldef"); 
+   local numulvl=FILESYS_StartListDirectory("/levels/"..fold.."/",true,false,false,false,".*\\.ldef"); 
    for index = 0, numulvl-1, 1 do
         local f=FILESYS_GetListDirectoryEntry(index);
         f=string.sub(f,1,string.len(f)-5);

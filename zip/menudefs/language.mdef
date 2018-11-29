@@ -17,7 +17,7 @@ function BuildEntries()
  oEntries={};
  Hints={};
  local lang=GLOBAL_GetVar("Language");
- local numulvl=FILESYS_StartListDirectory("/language/",true,false,false,false,"*.ldef"); 
+ local numulvl=FILESYS_StartListDirectory("/language/",true,false,false,false,".*\\.ldef"); 
  local counter=0;
  local langhint=TRANS_Str("language:hint");
 

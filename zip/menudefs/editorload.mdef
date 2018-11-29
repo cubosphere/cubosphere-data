@@ -18,7 +18,7 @@ numblockdefs=-1;
 function BuildEntries()
  Entries={};
  Hints={};
- local numulvl=FILESYS_StartListDirectory("/user/levels/",true,false,false,false,"*.ldef"); 
+ local numulvl=FILESYS_StartListDirectory("/user/levels/",true,false,false,false,".*\\.ldef"); 
 
 local index=0;
  for i = 0, numulvl-1, 1 do

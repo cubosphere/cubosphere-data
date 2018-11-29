@@ -27,7 +27,7 @@ function BuildEntries()
  Entries={};
  oEntries={};
  Hints={};
- local numitemdefs=FILESYS_StartListDirectory("/actordefs/",true,false,false,false,"*.adef"); 
+ local numitemdefs=FILESYS_StartListDirectory("/actordefs/",true,false,false,false,".*\\.adef"); 
  for index = 0, numitemdefs-1, 1 do
    oEntries[index+1]=string.sub(FILESYS_GetListDirectoryEntry(index),1,string.len(FILESYS_GetListDirectoryEntry(index))-5);
    Entries[index+1]=TRANS_StrD("ball:"..oEntries[index+1],oEntries[index+1]);

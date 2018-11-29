@@ -25,7 +25,7 @@ function AddSingleLevel(ln) if startlevel=="" then startlevel=ln;  end; end;
 
 function AddEpisodePart(foldername,transname)
  if startlevel~=""  then return; end;
- local numulvl=FILESYS_StartListDirectory("/levels/"..foldername.."/",true,false,false,false,"*.ldef"); 
+ local numulvl=FILESYS_StartListDirectory("/levels/"..foldername.."/",true,false,false,false,".*\\.ldef"); 
  if numulvl==0 then return; end;
  local f=FILESYS_GetListDirectoryEntry(0);
  f=string.sub(f,1,string.len(f)-5);

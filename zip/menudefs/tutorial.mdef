@@ -41,7 +41,7 @@ function BuildEntries()
  local counter=0;
  local ende=0;
 for fc=1,NumEpi,1 do
- local numulvl=FILESYS_StartListDirectory("/levels/"..Folders[fc],true,false,false,false,"*.ldef"); 
+ local numulvl=FILESYS_StartListDirectory("/levels/"..Folders[fc],true,false,false,false,".*\\.ldef"); 
 
  
  TotalLevels=0;

@@ -17,7 +17,7 @@ function BuildEntries()
  Entries={TRANS_Str("final:startgame"),"",TRANS_Str("final:loadgame"),"",TRANS_Str("base:cancel")};
  Hints={TRANS_Str("final:hint:startgame"),"",TRANS_Str("final:hint:loadgame"),"",TRANS_Str("game:hint:returntomain")};
  local cind=1;
- local numulvl=FILESYS_StartListDirectory("/user/saves/"..GLOBAL_GetVar("CurrentEpisode").."/",true,false,false,false,"*.sdef"); 
+ local numulvl=FILESYS_StartListDirectory("/user/saves/"..GLOBAL_GetVar("CurrentEpisode").."/",true,false,false,false,".*\\.sdef"); 
 
 
 
@@ -47,7 +47,7 @@ function AddSingleLevel(ln) if startlevel=="" then startlevel=ln;  end; end;
 
 function AddEpisodePart(foldername,transname)
  if startlevel~=""  then return; end;
- local numulvl=FILESYS_StartListDirectory("/levels/"..foldername.."/",true,false,false,false,"*.ldef"); 
+ local numulvl=FILESYS_StartListDirectory("/levels/"..foldername.."/",true,false,false,false,".*\\.ldef"); 
  if numulvl==0 then return; end;
  local f=FILESYS_GetListDirectoryEntry(0);
  f=string.sub(f,1,string.len(f)-5);
