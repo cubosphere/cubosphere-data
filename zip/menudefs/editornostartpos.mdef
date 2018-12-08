@@ -67,7 +67,7 @@ function OnKeyPressed(key,down,toggle)
 
 
 
- -- if (keyn=="return") or (keyn=="escape") then
+ -- if (keyn=="Return") or (keyn=="Escape") then
     --Return to the editor
     MENU_Load("editornotsave");
   --end;

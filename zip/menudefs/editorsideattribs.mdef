@@ -109,7 +109,7 @@ function HandleSelection(sel)
  if numattribs==0 or sel==-1 then
    
    if GLOBAL_GetVar("EditorToolCommand")~="changed" then
-     GLOBAL_SetVar("EditorToolCommand","return");
+     GLOBAL_SetVar("EditorToolCommand","Return");
    end;
    GLOBAL_SetVar("EditorTool","Editing");
    MENU_Deactivate();

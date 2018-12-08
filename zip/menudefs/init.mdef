@@ -124,6 +124,9 @@ end;
 
 function Precache()
   --PLEASE USE THE FOLLOWING BLOCK UNCHANGED IN YOUR MODIFICATION
+  local function SetKey(name, key)
+	  GLOBAL_SetVar("Key_"..name, KEYB_GetKeyConst(key));
+  end
   if MOD_GetName()=="" then
     if desiredmod~="" then
       MOD_SetName(desiredmod);
@@ -134,9 +137,6 @@ function Precache()
   GLOBAL_SetVar("FirstRun",0);
   GLOBAL_SetVar("TotalScore",0);
 
-  
-  
-  
   GLOBAL_SetVar("ScreenWidth",640);
   GLOBAL_SetVar("ScreenHeight",480);
   --Default config
@@ -148,13 +148,13 @@ function Precache()
   GLOBAL_SetVar("SoundVolume",100);
   GLOBAL_SetVar("MusicVolume",100);
 
-  GLOBAL_SetVar("Key_Forward",273);
-  GLOBAL_SetVar("Key_Left",276);
-  GLOBAL_SetVar("Key_Right",275);
-  GLOBAL_SetVar("Key_Jump",32);
-  GLOBAL_SetVar("Key_LookUp",119);
-  GLOBAL_SetVar("Key_LookDown",115);
-  GLOBAL_SetVar("Key_Special",13);
+  SetKey("Forward", "Up")
+  SetKey("Left", "Left")
+  SetKey("Right", "Right")
+  SetKey("Jump", "Space")
+  SetKey("LookUp", "W")
+  SetKey("LookDown", "S")
+  SetKey("Special", "Return")
 
   GLOBAL_SetVar("Key_Forward_p2",-1);
   GLOBAL_SetVar("Key_Left_p2",-1);

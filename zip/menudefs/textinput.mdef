@@ -153,13 +153,13 @@ function OnKeyPressed(key,down,toggle)
   keyn=KEYB_GetKeyName(key);
 
 
-  if (keyn=="return")then
+  if (keyn=="Return")then
     if CheckInput()==1 then
       GLOBAL_SetVar("TextInput_Text",Text);
       GLOBAL_SetVar("TextInput_Ok",1);
       MENU_Load(GLOBAL_GetVar("TextInput_OkMenu"));
     end;
-  elseif (keyn=="escape") then
+  elseif (keyn=="Escape") then
     if overwriteconfirmed==1 then
       overwriteconfirmed=0;
       return;
@@ -192,7 +192,7 @@ function OnKeyPressed(key,down,toggle)
 
   elseif typ=="string" then
    -- print(keyn);
-    if keyn=="space" then 
+    if keyn=="Space" then 
       Text=Text.." ";
     elseif keyn=="period / full stop" then
       Text=Text..":";

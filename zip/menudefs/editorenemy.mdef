@@ -54,7 +54,7 @@ function HandleSelection(sel)
  ResetStoredSelection();
  if  (sel==-1) then
    MENU_Deactivate();
-   GLOBAL_SetVar("EditorToolCommand","return");
+   GLOBAL_SetVar("EditorToolCommand","Return");
    GLOBAL_SetVar("EditorTool","Editing");
  elseif (sel==0) then
 

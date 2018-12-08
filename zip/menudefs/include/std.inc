@@ -216,7 +216,7 @@ for ip,pl in pairs({"","_p2"}) do
   elseif (bn==GLOBAL_GetVar("Joy_Right"..pl)) then
       key=KEYB_GetKeyConst("rightarrow");
   elseif (bn==GLOBAL_GetVar("Joy_Jump"..pl)) then
-      key=KEYB_GetKeyConst("return");
+      key=KEYB_GetKeyConst("Return");
   elseif (bn==GLOBAL_GetVar("Joy_Cancel"..pl)) then
       key=KEYB_GetKeyConst("esc");
   end;
@@ -245,25 +245,25 @@ function OnKeyPressed(key,down,toggle)
 
  
   if toggle==0 then
-     if keyn=="up arrow" then
+     if keyn=="Up" then
        UpTime=UpTime+GLOBAL_GetElapsed();
        if UpTime>TimeTillFirstSelect then
          toggle=1;
          UpTime=TimeTillFirstSelect-TimeTillNextSelect;
        end;
-     elseif keyn=="down arrow" then
+     elseif keyn=="Down" then
        DownTime=DownTime+GLOBAL_GetElapsed();
        if DownTime>TimeTillFirstSelect then
          toggle=1;
          DownTime=TimeTillFirstSelect-TimeTillNextSelect;
        end;
-     elseif keyn=="left arrow" then
+     elseif keyn=="Left" then
        LeftTime=LeftTime+GLOBAL_GetElapsed();
        if LeftTime>TimeTillFirstSelect then
          toggle=1;
          LeftTime=TimeTillFirstSelect-TimeTillNextSelect;
        end;
-     elseif keyn=="right arrow" then
+     elseif keyn=="Right" then
        RightTime=RightTime+GLOBAL_GetElapsed();
        if RightTime>TimeTillFirstSelect then
          toggle=1;
@@ -278,7 +278,7 @@ function OnKeyPressed(key,down,toggle)
 
   --print(KEYB_GetKeyName(key).."___");
 
-  if keyn=="up arrow" then
+  if keyn=="Up" then
     SOUND_Play(snd_nav,-1);
     Selected=Selected-1;
     if (Selected<0) then 
@@ -294,7 +294,7 @@ function OnKeyPressed(key,down,toggle)
          OnNavigate(-1);
     end;
   
-  elseif keyn=="down arrow" then
+  elseif keyn=="Down" then
    SOUND_Play(snd_nav,-1); 
    Selected=Selected+1;
     if (Selected>=NumEntries) then 
@@ -310,16 +310,16 @@ function OnKeyPressed(key,down,toggle)
          OnNavigate(1);
     end;
   
-  elseif (keyn=="return") or (keyn=="space") then
+  elseif (keyn=="Return") or (keyn=="Space") then
     GLOBAL_SetVar("MENUSELECTION_"..menuname,Selected);
     SOUND_Play(snd_sel,-1);
     HandleSelection(Selected);
-  elseif (keyn=="escape") then
+  elseif (keyn=="Escape") then
     SOUND_Play(snd_sel,-1);
     HandleSelection(-1);
-  elseif (keyn=="left arrow") and (useleftright==1) then
+  elseif (keyn=="Left") and (useleftright==1) then
     HandleLeftRight("left",Selected);
-  elseif (keyn=="right arrow") and (useleftright==1) then
+  elseif (keyn=="Right") and (useleftright==1) then
     HandleLeftRight("right",Selected);
   elseif SpecialKeyHandler then
     SpecialKeyHandler(key,down,toggle);

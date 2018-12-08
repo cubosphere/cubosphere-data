@@ -368,7 +368,7 @@ function OnKeyPressed(key,down,toggle)
  end;
 
  if GLOBAL_GetVar("EditorMode")==3 then --Overview beenden
-   if ((keyn=="space") or (keyn=="return")  or (keyn=="escape")) and (toggle==1) then
+   if ((keyn=="Space") or (keyn=="Return")  or (keyn=="Escape")) and (toggle==1) then
 
         --print("Avg. FPS: "..(GameFrame/GameTime));
        GLOBAL_SetVar("InGame",0);
@@ -392,7 +392,7 @@ end;
 
  if (InScene=="playing") then
   if down==1 then
-   if (keyn=="escape") and (toggle==1) then
+   if (keyn=="Escape") and (toggle==1) then
      if GLOBAL_GetVar("ProtectEscPressed")==0 then
         SOUND_Play(snd_sel,-1);
         InScene="pause"; 
@@ -441,26 +441,26 @@ end;
     end;
   end;
  elseif (InScene=="scores") then
-   if ((key==GLOBAL_GetVar("Key_Jump")) or (keyn=="escape")) and (toggle==1) then
+   if ((key==GLOBAL_GetVar("Key_Jump")) or (keyn=="Escape")) and (toggle==1) then
      InScene="finish"; -- Load the next level/restart
    end;
  elseif ((InScene=="pause") and (toggle==1)) then
 
-   if keyn=="escape" then
+   if keyn=="Escape" then
      SOUND_Play(snd_nav,-1);
      InScene="playing";
      LEVEL_SetTimeScale(1);
      PARTICLE_SetTimeScale(1);
-   elseif (keyn=="up arrow") then
+   elseif (keyn=="Up") then
      SOUND_Play(snd_nav,-1);
      MenuSelection=MenuSelection-1;
      if MenuSelection<0 then 
          MenuSelection=3;
      end;
-   elseif (keyn=="down arrow") then
+   elseif (keyn=="Down") then
     SOUND_Play(snd_nav,-1);
      MenuSelection=math.mod((MenuSelection+1),4);
-   elseif (keyn=="space") or (keyn=="return") or (key==GLOBAL_GetVar("Key_Jump")) then
+   elseif (keyn=="Space") or (keyn=="Return") or (key==GLOBAL_GetVar("Key_Jump")) then
      SOUND_Play(snd_sel,-1);
      if MenuSelection==0 then
        if key==GLOBAL_GetVar("Key_Jump") then

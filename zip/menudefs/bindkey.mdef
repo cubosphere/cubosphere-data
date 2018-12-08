@@ -79,7 +79,7 @@ function OnKeyPressed(key,down,toggle)
   --print(KEYB_GetKeyName(key).."___");
   keyn=KEYB_GetKeyName(key);
 
-  if keyn=="escape" then
+  if keyn=="Escape" then
     MENU_Load("controlskeyb");
     return;
     end;

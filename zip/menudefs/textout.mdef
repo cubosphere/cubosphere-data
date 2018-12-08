@@ -53,9 +53,9 @@ end;
 
 
 function OnKeyPressed(key,down,toggle)
- if down==1 and toggle==1 and (KEYB_GetKeyName(key)=="escape" or key==GLOBAL_GetVar("Key_Special")) then
+ if down==1 and toggle==1 and (KEYB_GetKeyName(key)=="Escape" or key==GLOBAL_GetVar("Key_Special")) then
    SOUND_Play(snd_sel,-1);
-   if KEYB_GetKeyName(key)=="escape" then
+   if KEYB_GetKeyName(key)=="Escape" then
      GLOBAL_SetVar("ProtectEscPressed",1); -- To avoid a direct popup of the in-game pause menu
    else 
      ITEM_SetVar(GLOBAL_GetVar("TextOutItem"),"SpecialProtect",1);

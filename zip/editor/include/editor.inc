@@ -433,7 +433,7 @@ function Think()
          GetKeys=1;
          continue_editing();
          GLOBAL_SetVar("EditorToolCommand","");
-    elseif cmd=="return" then
+    elseif cmd=="Return" then
        continue_editing();
        drawmenu=1;
        GetKeys=1;
@@ -656,13 +656,13 @@ if GetKeys==0 then
  keyn=KEYB_GetKeyName(key);
 --print(keyn);
  local speed=15*GLOBAL_GetScale()*GLOBAL_GetElapsed();
- if keyn=="up arrow" then
+ if keyn=="Up" then
    CAM_SetPos(VECTOR_Add(CAM_GetPos(),VECTOR_Scale(CAM_GetDir(),-speed)));
- elseif keyn=="down arrow" then
+ elseif keyn=="Down" then
    CAM_SetPos(VECTOR_Add(CAM_GetPos(),VECTOR_Scale(CAM_GetDir(),speed)));
- elseif keyn=="left arrow" then
+ elseif keyn=="Left" then
    CAM_SetPos(VECTOR_Add(CAM_GetPos(),VECTOR_Scale(CAM_GetSide(),-speed)));
- elseif keyn=="right arrow" then
+ elseif keyn=="Right" then
    CAM_SetPos(VECTOR_Add(CAM_GetPos(),VECTOR_Scale(CAM_GetSide(),speed)));
  
 
@@ -678,14 +678,14 @@ if GetKeys==0 then
    BLOCK_SetPos(selectblock,VECTOR_Add(BLOCK_GetPos(selectblock),VECTOR_New(0,2*GLOBAL_GetScale(),0))); selside=-1;
  elseif keyn=="q" and toggle==1 then
    BLOCK_SetPos(selectblock,VECTOR_Add(BLOCK_GetPos(selectblock),VECTOR_New(0,-2*GLOBAL_GetScale(),0))); selside=-1;
- elseif keyn=="space" and toggle==1 then
+ elseif keyn=="Space" and toggle==1 then
    SpacePressed();
  --elseif keyn=="o" and toggle==1 then
    --DEBUG();
 
  elseif keyn=="backspace" and toggle==1 then
    BackSpacePressed();
- elseif keyn=="return" and toggle==1 then
+ elseif keyn=="Return" and toggle==1 then
    ReturnPressed();
  elseif keyn=="F1" and toggle==1 then
    if showhelp==0 then
@@ -799,7 +799,7 @@ function OnKeyPressed(key,down,toggle)
 
  if (InScene=="editing") then
   if down==1 then
-   if (keyn=="escape") and (toggle==1) then
+   if (keyn=="Escape") and (toggle==1) then
       SOUND_Play(snd_sel,-1);
       CheckStartPos(); --Check if it is sane
       InScene="pause"; 
@@ -814,22 +814,22 @@ function OnKeyPressed(key,down,toggle)
    end;
   end;
  elseif ((InScene=="pause") and (toggle==1)) then
-   if keyn=="escape" then
+   if keyn=="Escape" then
      SOUND_Play(snd_sel,-1);
      continue_editing();
      GLOBAL_SetVar("EditorTool","Editing");
      menuactive=0;
      --LEVEL_SetTimeScale(1);
-   elseif (keyn=="down arrow") then
+   elseif (keyn=="Down") then
      SOUND_Play(snd_nav,-1);
      MenuSelection=math.mod((MenuSelection+1),menu_length);
-   elseif (keyn=="up arrow") then
+   elseif (keyn=="Up") then
      SOUND_Play(snd_nav,-1);
      MenuSelection=MenuSelection-1;
      if MenuSelection<0 then
        MenuSelection = menu_length-1;
      end;
-   elseif (keyn=="space") or (keyn=="return") then
+   elseif (keyn=="Space") or (keyn=="Return") then
      SOUND_Play(snd_sel,-1);
      if MenuSelection == menu_sections.continue then
        continue_editing();
@@ -922,7 +922,7 @@ function OnKeyPressed(key,down,toggle)
        MENU_Activate();
        --LEVEL_Deactivate();
        GLOBAL_SetVar("EditorTool","Settings");
-       GLOBAL_SetVar("EditorToolCommand","return");
+       GLOBAL_SetVar("EditorToolCommand","Return");
        menuactive=1;
        drawmenu=0;
        GetKeys=0;

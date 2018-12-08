@@ -47,7 +47,7 @@ end;
 function HandleSelection(sel)
  if  (sel==-1) or (sel==6) then
    GLOBAL_SetVar("EditorTool","Editing");
-   --GLOBAL_SetVar("EditorToolCommand","return");
+   --GLOBAL_SetVar("EditorToolCommand","Return");
    MENU_Deactivate();
    LEVEL_Activate();
    
