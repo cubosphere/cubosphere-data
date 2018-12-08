@@ -1,6 +1,6 @@
 print("Changing to Video-Mode: "..GLOBAL_GetVar("NewScreenWidth").." x "..GLOBAL_GetVar("NewScreenHeight").." HW: "..GLOBAL_GetVar("NewHardwareActive").." , FS: "..GLOBAL_GetVar("NewFullScreenActive"));
 
-DEVICE_Init(GLOBAL_GetVar("NewScreenWidth"),GLOBAL_GetVar("NewScreenHeight"),GLOBAL_GetVar("NewHardwareActive"),GLOBAL_GetVar("NewFullScreenActive"),0);
+DEVICE_Update(GLOBAL_GetVar("NewScreenWidth"),GLOBAL_GetVar("NewScreenHeight"),GLOBAL_GetVar("NewHardwareActive"),GLOBAL_GetVar("NewFullScreenActive"),0);
 
 
 menuname="changemode";
