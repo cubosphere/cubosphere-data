@@ -63,7 +63,7 @@ snd_sel=SOUND_Load("menusel");
 
 blockdefs={};
 
-PI_HALBE=1.57079633
+PI_HALBE=math.pi/2
 
 MenuSelection=0;
 
@@ -666,24 +666,24 @@ if GetKeys==0 then
    CAM_SetPos(VECTOR_Add(CAM_GetPos(),VECTOR_Scale(CAM_GetSide(),speed)));
  
 
- elseif keyn=="w" and toggle==1 then
+ elseif keyn=="W" and toggle==1 then
    BLOCK_SetPos(selectblock,VECTOR_Add(BLOCK_GetPos(selectblock),VECTOR_New(0,0,-2*GLOBAL_GetScale()))); selside=-1;
- elseif keyn=="s" and toggle==1 then
+ elseif keyn=="S" and toggle==1 then
    BLOCK_SetPos(selectblock,VECTOR_Add(BLOCK_GetPos(selectblock),VECTOR_New(0,0,2*GLOBAL_GetScale()))); selside=-1;
- elseif keyn=="d" and toggle==1 then
+ elseif keyn=="D" and toggle==1 then
    BLOCK_SetPos(selectblock,VECTOR_Add(BLOCK_GetPos(selectblock),VECTOR_New(2*GLOBAL_GetScale(),0,0))); selside=-1;
- elseif keyn=="a" and toggle==1 then
+ elseif keyn=="A" and toggle==1 then
    BLOCK_SetPos(selectblock,VECTOR_Add(BLOCK_GetPos(selectblock),VECTOR_New(-2*GLOBAL_GetScale(),0,0))); selside=-1;
- elseif keyn=="e" and toggle==1 then
+ elseif keyn=="E" and toggle==1 then
    BLOCK_SetPos(selectblock,VECTOR_Add(BLOCK_GetPos(selectblock),VECTOR_New(0,2*GLOBAL_GetScale(),0))); selside=-1;
- elseif keyn=="q" and toggle==1 then
+ elseif keyn=="Q" and toggle==1 then
    BLOCK_SetPos(selectblock,VECTOR_Add(BLOCK_GetPos(selectblock),VECTOR_New(0,-2*GLOBAL_GetScale(),0))); selside=-1;
  elseif keyn=="Space" and toggle==1 then
    SpacePressed();
  --elseif keyn=="o" and toggle==1 then
    --DEBUG();
 
- elseif keyn=="backspace" and toggle==1 then
+ elseif keyn=="Backspace" and toggle==1 then
    BackSpacePressed();
  elseif keyn=="Return" and toggle==1 then
    ReturnPressed();
@@ -696,7 +696,7 @@ if GetKeys==0 then
  
 -- elseif keyn=="p" and toggle==1 then
 --   SetStartPos();
- elseif keyn=="p" and toggle==1 then
+ elseif keyn=="P" and toggle==1 then
     if selside>=0 then
       SOUND_Play(snd_sel,-1);
     local pl=GetPlayerOnSide(selside);
@@ -713,7 +713,7 @@ if GetKeys==0 then
      menuactive=1;
      GetKeys=0;
     end;
- elseif keyn=="b" and toggle==1 then
+ elseif keyn=="B" and toggle==1 then
    --Call the Block Selector
    SOUND_Play(snd_sel,-1);
    MENU_Load("editorblocksel");
@@ -722,7 +722,7 @@ if GetKeys==0 then
    GLOBAL_SetVar("EditorTool","BlockSel");
    menuactive=1;
    GetKeys=0;
- elseif keyn=="v" and toggle==1 and selside>=0 then
+ elseif keyn=="V" and toggle==1 and selside>=0 then
    --Call the Side Attribute selection
    GLOBAL_SetVar("Editor_SelectedSide",selside);
    GLOBAL_SetVar("EditorTool","SideAttribs");
@@ -732,7 +732,7 @@ if GetKeys==0 then
    MENU_Activate();
    menuactive=1;
    GetKeys=0;
- elseif keyn=="i" and toggle==1 then
+ elseif keyn=="I" and toggle==1 then
     if selside>=0 then
      --Call the Item Selector
      SOUND_Play(snd_sel,-1);
@@ -755,7 +755,7 @@ if GetKeys==0 then
      menuactive=1;
      GetKeys=0;
     end;
- elseif keyn=="o" and toggle==1 then
+ elseif keyn=="O" and toggle==1 then
     if selside>=0 then
      --Call the Enemy Selector
      SOUND_Play(snd_sel,-1);
@@ -773,9 +773,9 @@ if GetKeys==0 then
      menuactive=1;
      GetKeys=0;
     end;
- elseif keyn=="tab" and toggle==1 then
+ elseif keyn=="Tab" and toggle==1 then
    TabPressed();
-  elseif keyn=="print-screen" and toggle==1 then
+  elseif keyn=="PrintScreen" and toggle==1 then
     DEVICE_ScreenShot();
  end;
  MoveSelBlock();
