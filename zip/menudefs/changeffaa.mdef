@@ -2,13 +2,13 @@
  DEVICE_SetAntiAliasing(GLOBAL_GetVar("NewFSAA"));
 
 
-local res=DEVICE_Init(GLOBAL_GetVar("ScreenWidth"),GLOBAL_GetVar("ScreenHeight"),GLOBAL_GetVar("HardwareActive"),GLOBAL_GetVar("FullScreenActive"),0);
+local res=DEVICE_Update(GLOBAL_GetVar("ScreenWidth"),GLOBAL_GetVar("ScreenHeight"),GLOBAL_GetVar("HardwareActive"),GLOBAL_GetVar("FullScreenActive"),0);
 
 if res==1 then
   GLOBAL_SetVar("FSAA",GLOBAL_GetVar("NewFSAA"));
 else 
   DEVICE_SetAntiAliasing(GLOBAL_GetVar("FSAA"));
-DEVICE_Init(GLOBAL_GetVar("ScreenWidth"),GLOBAL_GetVar("ScreenHeight"),GLOBAL_GetVar("HardwareActive"),GLOBAL_GetVar("FullScreenActive"),0);
+DEVICE_Update(GLOBAL_GetVar("ScreenWidth"),GLOBAL_GetVar("ScreenHeight"),GLOBAL_GetVar("HardwareActive"),GLOBAL_GetVar("FullScreenActive"),0);
 end;
 
 INCLUDE("/include/writecfg.inc");
