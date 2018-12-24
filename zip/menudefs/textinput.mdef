@@ -4,10 +4,15 @@ SelectedSize=0.04;
 logoactive=0; -- Set it to 0 for overmenus
 Caption="Enter Text";
 Text="";
+TextTable={}
 OldText="";
 overwriteconfirmed=0;
 
 darkbg=-1;
+
+local function UpdateText()
+	Text = table.concat(TextTable)
+end
 
 USING("FILESYS");
 
@@ -15,8 +20,12 @@ function Precache()
  FONT_Load(TRANS_Str("font"));
  logotxt=TEXDEF_Load("logo");
  Caption=GLOBAL_GetVar("TextInput_Caption");
+ TextTable = {}
  Text=GLOBAL_GetVar("TextInput_Text");
  OldText=Text;
+ for s in Text:gmatch('.[\128-\191]*') do
+	 TextTable[#TextTable+1] = s
+ end
  GLOBAL_SetVar("TextInput_Ok",-1);
  darkbg=TEXDEF_Load("darkbg");
 end;
@@ -96,53 +105,49 @@ function CheckInput()
   if typ=="userlevel_save" then
 
     if Text=="" then 
-      return 0;
+      return false;
     end;
     if Text==GLOBAL_GetVar("Editor_Filename") then
-      return 1; 
+      return true; 
     end;
    
     --Check overwriting
     if overwriteconfirmed==1 then
-      return 1;
+      return true;
     end;
     if CheckUserLevelExists()==1 then
      overwriteconfirmed=1; -- Means that we have to press enter again
-     return 0;
+     return false;
     end;
   
   elseif typ=="filename" then
-     if Text=="" then
-        return 0;
-     else 
-        return 1;
-     end;
+     return not (Text == "")
  
   elseif typ=="string" then
-        return 1;
+        return true;
      
   elseif typ=="float" or typ=="int" then
-    if Text=="" then
-     return 0;
-    else 
-      return 1;
-    end;
+    return not (Text == "")
 
   end;
   
-  return 1;
+  return true;
 end;
 
-function StrPos(inp,subst)
-  for ind=1,string.len(inp),1 do
-   local test=string.sub(inp,ind,ind+string.len(subst)-1);
-   if test==subst then
-    return ind;
-   end;
-  end;
-  return 0;
-end;
-
+function OnTextInput(str)
+	local typ = GLOBAL_GetVar("TextInput_Type")
+	
+	if typ == "userlevel_save" or typ == "filename" or typ == "string" then
+		overwriteconfirmed=0;
+		TextTable[#TextTable+1] = str
+		UpdateText()
+	elseif typ == "float" or typ == "int" then
+		if tonumber(str) or (str == '-' and #TextTable == 0) or (typ == "float" and str == '.' and not Text:match('%.')) then
+			TextTable[#TextTable+1] = str
+			UpdateText()
+		end
+	end
+end
 
 function OnKeyPressed(key,down,toggle)
   if toggle==0 then
@@ -152,9 +157,8 @@ function OnKeyPressed(key,down,toggle)
   
   keyn=KEYB_GetKeyName(key);
 
-
   if (keyn=="Return")then
-    if CheckInput()==1 then
+    if CheckInput() then
       GLOBAL_SetVar("TextInput_Text",Text);
       GLOBAL_SetVar("TextInput_Ok",1);
       MENU_Load(GLOBAL_GetVar("TextInput_OkMenu"));
@@ -167,37 +171,9 @@ function OnKeyPressed(key,down,toggle)
     GLOBAL_SetVar("TextInput_Text",OldText);
     GLOBAL_SetVar("TextInput_Ok",0);
     MENU_Load(GLOBAL_GetVar("TextInput_CancelMenu"));
-  elseif (keyn=="backspace") then
+  elseif (keyn=="Backspace") then
     overwriteconfirmed=0;
-    if string.len(Text)>0 then
-      Text=string.sub(Text,1,string.len(Text)-1);
-    end;
-  elseif (string.len(keyn)==1) then
-    if typ=="userlevel_save" or typ=="filename" or typ=="string" then
-       overwriteconfirmed=0;
-       Text=Text..keyn;
-    elseif typ=="float" or typ=="int" then
-       --Accept only numbers
-       if key>=48 and key<=57 then
-         Text=Text..keyn;
-       end;
-    end;
-  elseif typ=="float" or typ=="int" then
-   -- print(keyn);
-    if keyn=="minus sign" and string.len(Text)==0 then
-       Text=Text.."-";
-    elseif keyn=="period / full stop" and StrPos(Text,".")==0 and Text~="-" and typ=="float" then
-       Text=Text..".";
-    end;
-
-  elseif typ=="string" then
-   -- print(keyn);
-    if keyn=="Space" then 
-      Text=Text.." ";
-    elseif keyn=="period / full stop" then
-      Text=Text..":";
-    elseif keyn=="keypad divide" then
-      Text=Text.."/";
-    end;
+    TextTable[#TextTable] = nil
+	UpdateText()
   end;
 end; 

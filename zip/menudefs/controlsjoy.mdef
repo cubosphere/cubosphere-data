@@ -97,7 +97,7 @@ end;
 function  SpecialKeyHandler(key,down,toggle)
  if down==1 and toggle==1 then
    local kn=KEYB_GetKeyName(key);
-   if kn=="delete" or kn=="backspace" then
+   if kn=="Delete" or kn=="Backspace" then
      if Selected<=8 then
         local Defs={"Forward","Backward","Left","Right","Jump","Cancel","Special","LookUp","LookDown"};
         local n=Defs[Selected+1];
