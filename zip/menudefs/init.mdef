@@ -266,7 +266,7 @@ GLOBAL_SetVar("FSAA",1);
     GLOBAL_SetVar("FSAA",0);
     DEVICE_SetAntiAliasing(0);
     print("   > Anti-Aliasing not supported");
-    res=DEVICE_Update(GLOBAL_GetVar("ScreenWidth"),GLOBAL_GetVar("ScreenHeight"),GLOBAL_GetVar("HardwareActive"),GLOBAL_GetVar("FullScreenActive"),0);
+    res=DEVICE_Init(GLOBAL_GetVar("ScreenWidth"),GLOBAL_GetVar("ScreenHeight"),GLOBAL_GetVar("HardwareActive"),GLOBAL_GetVar("FullScreenActive"),0);
   elseif GLOBAL_GetVar("FSAA")==0 then
     DEVICE_SetAntiAliasing(0);
     res=DEVICE_Update(GLOBAL_GetVar("ScreenWidth"),GLOBAL_GetVar("ScreenHeight"),GLOBAL_GetVar("HardwareActive"),GLOBAL_GetVar("FullScreenActive"),0);
