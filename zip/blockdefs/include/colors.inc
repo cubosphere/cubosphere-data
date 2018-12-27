@@ -81,7 +81,7 @@ function ToggleCuboColor(color)
          local cc=BLOCK_GetVar(b,"Color");
          if cc==color then
            local ca=BLOCK_GetVar(b,"StartActive");
-           BLOCK_SetVar(b,"StartActive",math.mod(ca+1,2));
+           BLOCK_SetVar(b,"StartActive",math.fmod(ca+1,2));
          end;
     end;
 
@@ -94,7 +94,7 @@ function ToggleCuboColor(color)
          if cc==color then
            if tn~="magnet" then
              local ca=SIDE_GetVar(cs,"StartActive");
-             SIDE_SetVar(cs,"StartActive",math.mod(ca+1,2));
+             SIDE_SetVar(cs,"StartActive",math.fmod(ca+1,2));
            else
              local ca=SIDE_GetVar(cs,"StartStrength");
              SIDE_SetVar(cs,"StartStrength",ca+1);

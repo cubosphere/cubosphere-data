@@ -52,18 +52,18 @@ function GetMagnetStrength(side)
  local dist=SIDE_GetVar(side,"Distance");
  local ss=SIDE_GetVar(side,"StartStrength");
  if dist==0 then
-  return math.mod(ss,2);
+  return math.fmod(ss,2);
  elseif ts==0 then
    if dist>0 then
-     return math.mod(ss,3);
+     return math.fmod(ss,3);
    else
-     return 2-math.mod(ss,3);
+     return 2-math.fmod(ss,3);
    end; 
  else 
    if dist>0 then
-     return 1+math.mod(ss,2);
+     return 1+math.fmod(ss,2);
    else
-     return 2*math.mod(ss,2);
+     return 2*math.fmod(ss,2);
    end; 
  end;
 end;
@@ -242,7 +242,7 @@ local aact=PLAYER_GetActiveActor(player);
 for i=0,PLAYER_NumActors(player)-1,1 do
   local cact=PLAYER_GetActor(player,i);
 
-   if math.mod(i,2)==1 then
+   if math.fmod(i,2)==1 then
         secondplayer="_p2";
       else
         secondplayer="";  
@@ -998,7 +998,7 @@ function RenderSuperBall(actor)
 
  local gmt=ACTOR_GetVar(actor,"GodModeTimer");
  local w=(blinkbegin-gmt)/blinkbegin; 
- if (gmt<blinkbegin) and (math.mod(math.floor(2*w*numblinks),2)==0) then
+ if (gmt<blinkbegin) and (math.fmod(math.floor(2*w*numblinks),2)==0) then
    return;
  end;
 

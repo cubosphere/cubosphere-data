@@ -97,7 +97,7 @@ function GetPosFromTime(block,timeoffs)
  else
    dev=SinoidMove(block,timeoffs);
  end;
- local moddir=math.mod(BLOCK_GetVar(block,"Direction"),3);
+ local moddir=math.fmod(BLOCK_GetVar(block,"Direction"),3);
  local offsv=VECTOR_New(0,0,0);
  if moddir==0 then
    offsv=VECTOR_New(BLOCK_GetVar(block,"sx")+dev,BLOCK_GetVar(block,"sy"),BLOCK_GetVar(block,"sz"));

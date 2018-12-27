@@ -26,7 +26,7 @@ function SizeString()
 end;
 
 function ToggleSize()
- tsize=math.mod(tsize+1,numSizes);
+ tsize=math.fmod(tsize+1,numSizes);
  GLOBAL_SetVar("TextureSize",tsize);
 end;
 

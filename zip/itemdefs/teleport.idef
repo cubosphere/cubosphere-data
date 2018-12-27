@@ -80,7 +80,7 @@ function FindDestination(start,offs)
  if lookupsize==0 then
    return start;
  end;
- local index=math.mod(math.abs(offs-1),lookupsize);
+ local index=math.fmod(math.abs(offs-1),lookupsize);
  return lookup[index+1];
 end;
 
@@ -93,7 +93,7 @@ function Collide(actorid,itemid)
 
   --And perform the teleport
   local dside=FindDestination(ITEM_GetSide(itemid) ,ITEM_GetVar(itemid,"Target")); --Get the destination side
-  local ddir=math.mod(math.abs(ITEM_GetVar(itemid,"TargetRotation")),4); --and rotation (clamped to 0,1,2,3)
+  local ddir=math.fmod(math.abs(ITEM_GetVar(itemid,"TargetRotation")),4); --and rotation (clamped to 0,1,2,3)
 
   --Set the actor on the destination
   for i=0,PLAYER_NumActors(plr)-1 do

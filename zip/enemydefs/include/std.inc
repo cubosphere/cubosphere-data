@@ -90,7 +90,7 @@ function Think(actor)
    --obtain the next move
    
    --increment the Moveindex
-   local mi=math.mod(ACTOR_GetVar(actor,"MoveIndex"),string.len(ms))+1;
+   local mi=math.fmod(ACTOR_GetVar(actor,"MoveIndex"),string.len(ms))+1;
    local nm=string.lower(string.sub(ms,mi,mi));
    if nm=="f" then
      ACTOR_CallMove(actor,"forward");

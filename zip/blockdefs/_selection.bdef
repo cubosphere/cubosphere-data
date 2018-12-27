@@ -24,7 +24,7 @@ function RenderSide(side)
 
   local dr;
   
-  if ( (math.mod(side-GLOBAL_GetVar("Editor_SelectedSide"),6)==0) and (GLOBAL_GetVar("Editor_SelectedSide")>=0)) or (GLOBAL_GetVar("Editor_SelectedBlock")>=0) then
+  if ( (math.fmod(side-GLOBAL_GetVar("Editor_SelectedSide"),6)==0) and (GLOBAL_GetVar("Editor_SelectedSide")>=0)) or (GLOBAL_GetVar("Editor_SelectedBlock")>=0) then
     dr=1;
   else 
    dr=0;

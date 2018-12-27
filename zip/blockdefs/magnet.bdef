@@ -46,18 +46,18 @@ function GetStrength(side)
  local dist=SIDE_GetVar(side,"Distance");
  local ss=SIDE_GetVar(side,"StartStrength");
  if dist==0 then
-  return math.mod(ss,2);
+  return math.fmod(ss,2);
  elseif ts==0 then
    if dist>0 then
-     return math.mod(ss,3);
+     return math.fmod(ss,3);
    else
-     return 2-math.mod(ss,3);
+     return 2-math.fmod(ss,3);
    end; 
  else 
    if dist>0 then
-     return 1+math.mod(ss,2);
+     return 1+math.fmod(ss,2);
    else
-     return 2*math.mod(ss,2);
+     return 2*math.fmod(ss,2);
    end; 
  end;
 end;

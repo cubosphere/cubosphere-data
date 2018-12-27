@@ -249,7 +249,7 @@ function FindDestination(start,offs)
  if (index<0) then
     index=-index;
  end;
- index=math.mod(index,lookupsize);
+ index=math.fmod(index,lookupsize);
  return lookup[index+1];
 end;
 
@@ -285,10 +285,10 @@ function SideThink(side)
     if nt<=0 and t>0 then
      --print("Teleport");
 
-     --local ds=math.mod(math.abs(SIDE_GetVar(side,"DestSide")),LEVEL_NumBlocks()*6);
+     --local ds=math.fmod(math.abs(SIDE_GetVar(side,"DestSide")),LEVEL_NumBlocks()*6);
      --local ds=math.abs(SIDE_GetVar(side,"DestSide"));
      local ds=FindDestination(side,SIDE_GetVar(side,"DestSide"));
-     local dr=math.mod(math.abs(SIDE_GetVar(side,"DestRotation")),4);
+     local dr=math.fmod(math.abs(SIDE_GetVar(side,"DestRotation")),4);
      if SIDE_GetType(ds)=="teleport" then
         --Prevents reteleporting 
         local telefrag=SIDE_GetVar(ds,"Reteleport");

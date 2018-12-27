@@ -63,7 +63,7 @@ end
 
 function DistRenderSide(side)
   local b=SIDE_GetBlock(side);
-  if BLOCK_GetVar(b,"Direction")==math.mod(side,6) then
+  if BLOCK_GetVar(b,"Direction")==math.fmod(side,6) then
 
   MATRIX_Push();
   local dir=SIDE_GetTangent(side);

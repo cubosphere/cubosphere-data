@@ -40,7 +40,7 @@ LEVEL_FileWrite(f,"function InitActors()");
 for ball=0,ACTOR_NumActors()-1,1 do 
  if ACTOR_IsPlayer(ball)==1 then
    local sbp=BLOCK_GetPos(SIDE_GetBlock(ACTOR_GetOnSide(ball)));
-   local ss=math.mod(ACTOR_GetOnSide(ball),6);
+   local ss=math.fmod(ACTOR_GetOnSide(ball),6);
    local sr=ACTOR_GetStartRotation(ball);
    local startside=ACTOR_GetOnSide(ball); 
    local sp=VECTOR_Add(SIDE_GetMidpoint(ACTOR_GetOnSide(ball)),VECTOR_Scale(SIDE_GetNormal(ACTOR_GetOnSide(ball)),GLOBAL_GetScale()*0.5));
@@ -76,7 +76,7 @@ LEVEL_FileWrite(f,"");
 --if startblock>=0 then
 --  local sblockpos=BLOCK_GetPos(startblock);
 --  LEVEL_FileWrite(f,"  startblockpos=VECTOR_New"..VECTOR_ToString(sblockpos)..";");
---  LEVEL_FileWrite(f,"  startside="..math.mod(startside,6)..";");
+--  LEVEL_FileWrite(f,"  startside="..math.fmod(startside,6)..";");
  -- LEVEL_FileWrite(f,"  startrotation="..startrotation..";");
 --  LEVEL_FileWrite(f,"  startblock=1; --Means that a start point is set");
 --  LEVEL_FileWrite(f,"");

@@ -43,7 +43,7 @@ function GetEditorInfo(name,default)
 end;
 
 function RotateDir(side,inp,num)
- num=math.mod(num,4);
+ num=math.fmod(num,4);
  local outv=VECTOR_New(inp.x,inp.y,inp.z);
  local norm=SIDE_GetNormal(side);
  for i=1,num,1 do

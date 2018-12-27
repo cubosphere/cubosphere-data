@@ -204,7 +204,7 @@ local aact=PLAYER_GetActiveActor(player);
 for i=0,PLAYER_NumActors(player)-1,1 do
   local cact=PLAYER_GetActor(player,i);
 
-   if math.mod(i,2)==1 then
+   if math.fmod(i,2)==1 then
         secondplayer="_p2";
       else
         secondplayer="";  
@@ -332,7 +332,7 @@ end;
      end;
    elseif (keyn==GLOBAL_GetVar("Joy_Backward")) or (keyn==GLOBAL_GetVar("Joy_Backward_p2")) then
     SOUND_Play(snd_nav,-1);
-     MenuSelection=math.mod((MenuSelection+1),4);
+     MenuSelection=math.fmod((MenuSelection+1),4);
    elseif (keyn==GLOBAL_GetVar("Joy_Jump")) or (keyn==GLOBAL_GetVar("Joy_Jump_p2")) then
      SOUND_Play(snd_sel,-1);
      if MenuSelection==0 then
@@ -459,7 +459,7 @@ end;
      end;
    elseif (keyn=="Down") then
     SOUND_Play(snd_nav,-1);
-     MenuSelection=math.mod((MenuSelection+1),4);
+     MenuSelection=math.fmod((MenuSelection+1),4);
    elseif (keyn=="Space") or (keyn=="Return") or (key==GLOBAL_GetVar("Key_Jump")) then
      SOUND_Play(snd_sel,-1);
      if MenuSelection==0 then
@@ -1457,7 +1457,7 @@ end;
      DrawKey(offsx,offsy,0);
    end;
    offsx=offsx+KeyIconDistanceX;
-  if math.mod(i+1,KeyIconMaxPerRow)==0 then
+  if math.fmod(i+1,KeyIconMaxPerRow)==0 then
      offsy=offsy+KeyIconDistanceY;
      offsx=-0.5+KeyIconOffsetX;
    end;

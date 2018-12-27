@@ -167,25 +167,29 @@ Line("DejaVu Fonts");
    Line("Valerio Perticone");
    Line("Vincent Petry");
    Line("Jean-loup Gailly, Mark Adler, Lucian Wischik");
+   Line "cddepppp256"
    Line("");  
    
 DescLine(TRANS_Str("credits:libs"));
    Line("OpenGL");
-   Line("SDL & SDL_mixer & SDL_ttf");
-   Line("lua");
+   Line("SDL2 & SDL_mixer2 & SDL_ttf2");
+   Line("Lua");
    Line("GLEW");
    Line("libjpeg");
+   Line "libpng"
+   Line "POCO libs"
    Line("");  
 
 DescLine(TRANS_Str("credits:programs"));
-   Line("Code::Blocks");
-   Line("g++");
+   Line "KDevelop"
+   Line "LLVM stack: clang and lldb"
    Line("GIMP");
    Line("Wings 3d");
    Line("Audacity");
    Line("Misfit 3d Modeler");
    Line("gedit");  
-   Line("Ubuntu Linux");  
+   Line("Ubuntu Linux");
+   Line("Code::Blocks");
    Line("");
 
 DescLine(TRANS_Str("credits:addthanks"));
@@ -205,7 +209,7 @@ function SizeMulti(of)
   --return 0.5;
 
   local f=(of+top)/top;
-  f=1-f*f;
+  f=1-f^2;
   if f<0 then
     return 0;
   else

@@ -45,7 +45,7 @@ end;
 
 
 function GetNewGravity(item)
- local direct=math.mod(ITEM_GetVar(item,"Direction"),6);
+ local direct=math.fmod(ITEM_GetVar(item,"Direction"),6);
  GetBasis(item,0);
  if direct==0 then
     return VECTOR_Scale(up,1);
@@ -98,7 +98,7 @@ function RenderMdl(item,height)
  
   MATRIX_Push();
   GetBasis(item,height);
-  local direct=math.mod(ITEM_GetVar(item,"Direction"),6);
+  local direct=math.fmod(ITEM_GetVar(item,"Direction"),6);
   if direct==0 then
     MATRIX_MultBase(right,up,dir,pos);
   elseif direct==1 then

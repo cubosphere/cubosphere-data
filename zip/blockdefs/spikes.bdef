@@ -102,8 +102,8 @@ end;
 function GetDepth(side)
   local time=LEVEL_GetTime()+SIDE_GetVar(side,"Phase")*3;
   local oldtime=time-LEVEL_GetElapsed();
-  local omega=math.mod(time*SIDE_GetVar(side,"Speed")*speedmult,3);
-  local oldomega=math.mod(oldtime*SIDE_GetVar(side,"Speed")*speedmult,3);
+  local omega=math.fmod(time*SIDE_GetVar(side,"Speed")*speedmult,3);
+  local oldomega=math.fmod(oldtime*SIDE_GetVar(side,"Speed")*speedmult,3);
   if omega<0.5 then
     depth=1;
   elseif omega<0.7 then

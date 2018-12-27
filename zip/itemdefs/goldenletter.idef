@@ -61,7 +61,7 @@ function RenderMdl(item,height)
   MATRIX_MultBase(right,up,dir,pos);
   MATRIX_ScaleUniform(GLOBAL_GetScale()*0.45);
 
-  local lindex=math.mod(ITEM_GetVar(item,"LetterIndex"),10)+1;
+  local lindex=math.fmod(ITEM_GetVar(item,"LetterIndex"),10)+1;
   GLOBAL_SetVar("RenderColor",lindex);
 
   MDLDEF_Render(mdl);

@@ -324,7 +324,7 @@ function SetStartPos()
        startblock=tr["block"]; 
        ShowInfo(TRANS_Str("editor:info:startset"));
      else
-       startrotation=math.mod(startrotation+1,4);
+       startrotation=math.fmod(startrotation+1,4);
        ShowInfo(TRANS_Str("editor:info:startrot"));
      end;
   end;
@@ -518,7 +518,7 @@ if GetKeys==0 then
    end;
  else
    changed=1;
-   LEVEL_ChangeSide(bi,SideStrings[math.mod(selside,6)+1],blocktype);
+   LEVEL_ChangeSide(bi,SideStrings[math.fmod(selside,6)+1],blocktype);
    ShowInfo(TRANS_Str("editor:info:sideapply"));
    if (BLOCK_GetEditorInfo(bi,"BlockOnly","no")=="yes") or (SIDE_GetEditorInfo(selside,"BlockOnly","no")=="yes") then
           LEVEL_ChangeBlock(bi,blocktype);
@@ -574,7 +574,7 @@ if GetKeys==0 then
      startrotation=0;
    else
      startblockpos=BLOCK_GetPos(startblock);
-     startside=math.mod(startside,6);
+     startside=math.fmod(startside,6);
    end;
 
    --Killing all enemies on bi
@@ -822,7 +822,7 @@ function OnKeyPressed(key,down,toggle)
      --LEVEL_SetTimeScale(1);
    elseif (keyn=="Down") then
      SOUND_Play(snd_nav,-1);
-     MenuSelection=math.mod((MenuSelection+1),menu_length);
+     MenuSelection=math.fmod((MenuSelection+1),menu_length);
    elseif (keyn=="Up") then
      SOUND_Play(snd_nav,-1);
      MenuSelection=MenuSelection-1;

@@ -130,8 +130,8 @@ function GetDepth(side)
   --Get the Pattern
   local pat=SIDE_GetVar(side,"Pattern");
   --Clamp the current index <ind> and next index <ind2> to the size of the <Pattern> string
-  local ind=math.mod(ind,string.len(pat))+1;
-  local ind2=math.mod(ind,string.len(pat))+1;
+  local ind=math.fmod(ind,string.len(pat))+1;
+  local ind2=math.fmod(ind,string.len(pat))+1;
 
   --Get the letters
   local now=string.lower(string.sub(pat,ind,ind)); 

@@ -146,7 +146,7 @@ function SideCollisionCheck(actorid,sideid)
       SIDE_SetVar(sideid,"Toggled",1);
       SIDE_SetVar(sideid,"PrevToggled",1);
       SIDE_SetVar(sideid,"PrevToggledBy",actorid);
-      SIDE_SetVar(sideid,"StartActive",math.mod(SIDE_GetVar(sideid,"StartActive")+1,2));
+      SIDE_SetVar(sideid,"StartActive",math.fmod(SIDE_GetVar(sideid,"StartActive")+1,2));
       SOUND_Play(snd_deactivate,-1);
       ToggleCuboColor(SIDE_GetVar(sideid,"Color"));
     end;
