@@ -92,9 +92,11 @@ end;
 function BuildNewConfig()
  --Find a good video mode... should be small at best and using hardware
  hw=1;
+ DEVICE_SetHWRender(true)
  nummodes=DEVICE_GetVideoModes(1,0);
  if (nummodes==0) then
    hw=0;
+   DEVICE_SetHWRender(false)
    nummodes=DEVICE_GetVideoModes(0,0);
    if (nummodes==0) then
      print("found no valid video modes! -> EXIT");
@@ -253,7 +255,7 @@ GLOBAL_SetVar("FSAA",1);
 
   
   DEVICE_SetAntiAliasing(1);
-  local hasAA=DEVICE_Init(GLOBAL_GetVar("ScreenWidth"),GLOBAL_GetVar("ScreenHeight"),GLOBAL_GetVar("HardwareActive"),GLOBAL_GetVar("FullScreenActive"),0);
+  local hasAA=DEVICE_Init(GLOBAL_GetVar("ScreenWidth"),GLOBAL_GetVar("ScreenHeight"),GLOBAL_GetVar("HardwareActive"),GLOBAL_GetVar("FullScreenActive"));
   GLOBAL_SetVar("FSAA_Supported",hasAA);
 
   res=hasAA;
@@ -266,10 +268,10 @@ GLOBAL_SetVar("FSAA",1);
     GLOBAL_SetVar("FSAA",0);
     DEVICE_SetAntiAliasing(0);
     print("   > Anti-Aliasing not supported");
-    res=DEVICE_Init(GLOBAL_GetVar("ScreenWidth"),GLOBAL_GetVar("ScreenHeight"),GLOBAL_GetVar("HardwareActive"),GLOBAL_GetVar("FullScreenActive"),0);
+    res=DEVICE_Init(GLOBAL_GetVar("ScreenWidth"),GLOBAL_GetVar("ScreenHeight"),GLOBAL_GetVar("HardwareActive"),GLOBAL_GetVar("FullScreenActive"));
   elseif GLOBAL_GetVar("FSAA")==0 then
     DEVICE_SetAntiAliasing(0);
-    res=DEVICE_Update(GLOBAL_GetVar("ScreenWidth"),GLOBAL_GetVar("ScreenHeight"),GLOBAL_GetVar("HardwareActive"),GLOBAL_GetVar("FullScreenActive"),0);
+    res=DEVICE_Update(GLOBAL_GetVar("ScreenWidth"),GLOBAL_GetVar("ScreenHeight"),GLOBAL_GetVar("HardwareActive"),GLOBAL_GetVar("FullScreenActive"));
   end;
 
 

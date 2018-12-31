@@ -61,6 +61,7 @@ if cfg~=0 then
    CONFIG_Write(cfg,"HighQualityModels");
    CONFIG_Write(cfg,"UseParticles");
    CONFIG_Write(cfg,"FSAA");
+   --CONFIG_Write(cfg,"VSync");
 
 
    CONFIG_Write(cfg,"FinalUnlocked");
