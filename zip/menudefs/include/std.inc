@@ -210,17 +210,17 @@ function OnJoyButton(stick,button,dir,val,toggle)
 for ip,pl in pairs({"","_p2"}) do
   if key then break; end;
   if (bn==GLOBAL_GetVar("Joy_Forward"..pl)) then
-      key=KEYB_GetKeyConst("uparrow");
+      key=KEYB_GetKeyConst("Up");
   elseif (bn==GLOBAL_GetVar("Joy_Backward"..pl)) then
-      key=KEYB_GetKeyConst("downarrow");
+      key=KEYB_GetKeyConst("Down");
   elseif (bn==GLOBAL_GetVar("Joy_Left"..pl)) then
-      key=KEYB_GetKeyConst("leftarrow");
+      key=KEYB_GetKeyConst("Left");
   elseif (bn==GLOBAL_GetVar("Joy_Right"..pl)) then
-      key=KEYB_GetKeyConst("rightarrow");
+      key=KEYB_GetKeyConst("Right");
   elseif (bn==GLOBAL_GetVar("Joy_Jump"..pl)) then
       key=KEYB_GetKeyConst("Return");
   elseif (bn==GLOBAL_GetVar("Joy_Cancel"..pl)) then
-      key=KEYB_GetKeyConst("esc");
+      key=KEYB_GetKeyConst("Escape");
   end;
 end;
 
