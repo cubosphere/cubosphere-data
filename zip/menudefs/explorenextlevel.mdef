@@ -36,6 +36,7 @@ function HandleSelection(sel)
     GLOBAL_SetVar("ProgressSaved",1); --Actually it isn't saved, but this triggers the nextlevel to be loaded
     MENU_Deactivate(); 
   else
+	GLOBAL_SetVar("InGame",0);
     MENU_Load("exploreepisode");
     LEVEL_Deactivate();
  end;
