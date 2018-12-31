@@ -241,6 +241,7 @@ TRANS_Add("controloptions:joy:lookup","Look up");
 TRANS_Add("controloptions:joy:right","Right/Menu right");
 TRANS_Add("controloptions:joy:setkey","Press a Button for");
 TRANS_Add("controloptions:joy:special","Special");
+TRANS_Add("controloptions:joy:notconnected","<not connected>");
 TRANS_Add("controloptions:joystick","Setup Joystick/Gamepad");
 TRANS_Add("controloptions:joystick:title","Joystick Controls");
 TRANS_Add("controloptions:jump","Jump");

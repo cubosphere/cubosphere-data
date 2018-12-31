@@ -1,6 +1,9 @@
 menuname="controlsjoy";
 INCLUDE("/include/std.inc");
 
+local GUIDToName = {}
+local joystick = require "Joystick"
+
 EntrySize=0.02;
 SelectedSize=0.03;
 
@@ -13,61 +16,36 @@ if GLOBAL_GetVar("ControlsForPlayer")==2 then
  secondplayer="_p2";
 end;
 
-
-function StrCopy(inp,from,num)
-  local ende=from+num-1;
-  if ende>string.len(inp) then
-    ende=string.len(inp);
-  end;
-  local res="";
-  --print("Copy <"..inp.."> from "..from.." to "..ende); 
-  for ind=from,ende,1 do
-    res=res..string.sub(inp,ind,ind);
-  end;
-  --print("   returns <"..res..">");
-  return res;
-end;
-
 function GetAssignedJoyButton(forwhat)
- local jstr=GLOBAL_GetVar("Joy_"..forwhat..secondplayer);
- if jstr==-1 then
-  return TRANS_Str("key:undefined");
- end;
- --Seperate it into different numbers: stick, typ, index
- local c=string.find(jstr,",");
- local res;
- if c then
-   stick=1+StrCopy(jstr,1,c-1);
-   tstr=StrCopy(jstr,c+1,string.len(jstr));
-   res=tstr;
-   c=string.find(tstr,",");
-   if c then
-     ty=0+StrCopy(tstr,1,c-1);
-     index=1+StrCopy(tstr,c+1,string.len(tstr));
-     local js=TRANS_Str("controloptions:joy:joystring");
-     local postfix="";
-     if ty==0 then
-       tystr=TRANS_Str("controloptions:joy:joybutton");
-     elseif ty==1 then
-       tystr=TRANS_Str("controloptions:joy:joyaxis");
-       postfix=TRANS_Str("controloptions:joy:joyaxis:plus");
-     else
-       tystr=TRANS_Str("controloptions:joy:joyaxis");
-       postfix=TRANS_Str("controloptions:joy:joyaxis:minus");
-     end;
-     res=js..stick..tystr..index..postfix;
-
-   else 
-    res=jstr;
-   end;
- else 
-   res=jstr;
- end;
- return res;
+	local jstr=GLOBAL_GetVar("Joy_"..forwhat..secondplayer);
+	if jstr==-1 then
+		return TRANS_Str("key:undefined");
+	end;
+	--Seperate it into different numbers: stick, typ, index
+	local guid,dir,button = jstr:match("^(.-),(.-),(.-)$")
+	dir,button = tonumber(dir), tonumber(dir)
+	if not (guid and dir and button) then return jstr end
+	local name = GUIDToName[guid] or TRANS_Str("controloptions:joy:notconnected")
+	local js=TRANS_Str("controloptions:joy:joystring");
+	local postfix="";
+	if dir==0 then
+		tystr=TRANS_Str("controloptions:joy:joybutton");
+	elseif dir==1 then
+		tystr=TRANS_Str("controloptions:joy:joyaxis");
+		postfix=TRANS_Str("controloptions:joy:joyaxis:plus");
+	else
+		tystr=TRANS_Str("controloptions:joy:joyaxis");
+		postfix=TRANS_Str("controloptions:joy:joyaxis:minus");
+	end;
+	return js..name..tystr..button..postfix;
 end;
 
 
 function BuildStrings()
+	for _,id in ipairs(joystick.List()) do
+		local joy = joystick.Get(id)
+		GUIDToName[joy:GetGUID()] = joy:GetName()
+	end
  Entries={TRANS_Str("controloptions:joy:forward")..": "..GetAssignedJoyButton("Forward"),
           TRANS_Str("controloptions:joy:backward")..": "..GetAssignedJoyButton("Backward"),
           TRANS_Str("controloptions:joy:left")..": "..GetAssignedJoyButton("Left"),

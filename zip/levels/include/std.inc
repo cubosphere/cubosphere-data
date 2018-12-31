@@ -192,7 +192,9 @@ function BackwardCompatibility(vers,when)
 end;
 
 function MakeJoystickString(stick,button,dir)
-  return (stick..","..dir..","..button);
+	local joystick = require "Joystick"
+	local joy = joystick.Get(stick) 
+	return (joy:GetGUID()..","..dir..","..button);
 end;
 
 
