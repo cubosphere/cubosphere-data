@@ -23,7 +23,7 @@ function GetAssignedJoyButton(forwhat)
 	end;
 	--Seperate it into different numbers: stick, typ, index
 	local guid,dir,button = jstr:match("^(.-),(.-),(.-)$")
-	dir,button = tonumber(dir), tonumber(dir)
+	dir,button = tonumber(dir), tonumber(button)
 	if not (guid and dir and button) then return jstr end
 	local name = GUIDToName[guid] or TRANS_Str("controloptions:joy:notconnected")
 	local js=TRANS_Str("controloptions:joy:joystring");

@@ -41,7 +41,7 @@ function BuildEntries()
  Entries={};
  Hints={};
  oEntries={};
- local numblockdefs=FILESYS_StartListDirectory("/blockdefs/",true,false,false,false,".*\\.bdef"); 
+ local numblockdefs=FILESYS_StartListDirectory("/blockdefs/",true,false,false,false,".*\\.lua"); 
  local index=0;
  for i = 0, numblockdefs-1, 1 do
    local bnam=string.sub(FILESYS_GetListDirectoryEntry(i),1,string.len(FILESYS_GetListDirectoryEntry(i))-5);
