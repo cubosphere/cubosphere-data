@@ -39,7 +39,7 @@ function BuildEntries()
  Hints={};
  local numthemes=FILESYS_StartListDirectory("/themedefs/",true,false,false,false,".*\\.lua"); 
  for index = 0, numthemes-1, 1 do
-   oEntries[index+1]=string.sub(FILESYS_GetListDirectoryEntry(index),1,string.len(FILESYS_GetListDirectoryEntry(index))-9);
+   oEntries[index+1]=FILESYS_GetListDirectoryEntry(index):match('^(.+)%..-$')
    Entries[index+1]=TRANS_StrD("theme:"..oEntries[index+1],oEntries[index+1]);
    Hints[index+1]=TRANS_Str("editor:theme:hint")..Entries[index+1];
  end;

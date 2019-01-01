@@ -45,7 +45,7 @@ function BuildEntries()
  local numitemdefs=FILESYS_StartListDirectory("/itemdefs/",true,false,false,false,".*\\.lua"); 
  local i=0;
  for index = 0, numitemdefs-1, 1 do
-   local inam=string.sub(FILESYS_GetListDirectoryEntry(index),1,string.len(FILESYS_GetListDirectoryEntry(index))-5);
+   local inam=FILESYS_GetListDirectoryEntry(index):match('^(.+)%..-$')
    if ItemOnBlacklist(inam)==false then
       i=i+1;
       oEntries[i]=inam;

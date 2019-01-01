@@ -44,7 +44,7 @@ function BuildEntries()
  local numblockdefs=FILESYS_StartListDirectory("/blockdefs/",true,false,false,false,".*\\.lua"); 
  local index=0;
  for i = 0, numblockdefs-1, 1 do
-   local bnam=string.sub(FILESYS_GetListDirectoryEntry(i),1,string.len(FILESYS_GetListDirectoryEntry(i))-5);
+   local bnam=FILESYS_GetListDirectoryEntry(i):match('^(.+)%..-$')
    if BlockOnBlacklist(bnam)==false then
      oEntries[index+1]=bnam;
      Entries[index+1]=TRANS_StrD("block:type:"..oEntries[index+1],oEntries[index+1]);

@@ -17,12 +17,12 @@ function BuildEntries()
  Entries={TRANS_Str("final:startgame"),"",TRANS_Str("final:loadgame"),"",TRANS_Str("base:cancel")};
  Hints={TRANS_Str("final:hint:startgame"),"",TRANS_Str("final:hint:loadgame"),"",TRANS_Str("game:hint:returntomain")};
  local cind=1;
- local numulvl=FILESYS_StartListDirectory("/user/saves/"..GLOBAL_GetVar("CurrentEpisode").."/",true,false,false,false,".*\\.sdef"); 
+ local numulvl=FILESYS_StartListDirectory("/user/saves/"..GLOBAL_GetVar("CurrentEpisode").."/",true,false,false,false,".*\\.lua"); 
 
 
 
  for index = 0, numulvl-1, 1 do
-   local fname=string.sub(FILESYS_GetListDirectoryEntry(index),1,string.len(FILESYS_GetListDirectoryEntry(index))-5);
+   local fname=FILESYS_GetListDirectoryEntry(index):match('^(.+)%..-$')
    --print("Checking "..fname);
    if fname=="f" then
      SAVE_VERSION=0;

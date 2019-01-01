@@ -52,10 +52,11 @@ function BuildEntries()
  Entries={};
  Hints={};
  local cind=1;
- local numsvs=FILESYS_StartListDirectory("/user/saves/"..GLOBAL_GetVar("CurrentEpisode").."/",true,false,false,false,".*\\.sdef"); 
+ local numsvs=FILESYS_StartListDirectory("/user/saves/"..GLOBAL_GetVar("CurrentEpisode").."/",true,false,false,false,".*\\.lua"); 
  local fnames={};
   for index = 0, numsvs-1, 1 do
-    fnames[index]=string.sub(FILESYS_GetListDirectoryEntry(index),1,string.len(FILESYS_GetListDirectoryEntry(index))-5);
+    --fnames[index]=string.sub(FILESYS_GetListDirectoryEntry(index),1,string.len(FILESYS_GetListDirectoryEntry(index))-4);
+	  fnames[index] = FILESYS_GetListDirectoryEntry(index):match('^(.+)%..-$')
   end;
 
  for index = 1, 4, 1 do

@@ -1,6 +1,6 @@
 
 
-svname="/user/saves/"..GLOBAL_GetVar("CurrentEpisode").."/"..GLOBAL_GetVar("SaveToSlot")..".sdef";
+svname="/user/saves/"..GLOBAL_GetVar("CurrentEpisode").."/"..GLOBAL_GetVar("SaveToSlot")..".lua";
 
 print("saving game ("..svname..")");
 
