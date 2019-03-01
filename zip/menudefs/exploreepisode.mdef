@@ -251,7 +251,7 @@ end;
 function SpecialKeyHandler(key,down,toggle)
  local kn=KEYB_GetKeyName(key);
 --print(kn.."  "..key);
- if kn=="s" and down==1 and toggle==1 then
+ if kn=="S" and down==1 and toggle==1 then
    --print(freeskips.."  "..TotalLevels);
    if Scores[Selected+1]==-1 and freeskips>0 and Selected+1<TotalLevels then
      SCORE_SetVar(oEntries[Selected+1],-2);
