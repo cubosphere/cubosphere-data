@@ -4,7 +4,7 @@
 ---------------------------------------------
 --TUTORIAL FOR CREATING OWN LANGUAGE FILES--
 ---------------------------------------------
---	To create your own language file please copy this file into the same directory and rename it to <yourlanguage>.ldef
+--	To create your own language file please copy this file into the same directory and rename it to <yourlanguage>.lua
 --	Then replace each second string in the TRANS_Add functions
 --	Comments are possible if you begin a line with two dashes (like this one)
 --	But first the header of the file:

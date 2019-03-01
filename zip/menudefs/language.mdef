@@ -17,14 +17,14 @@ function BuildEntries()
  oEntries={};
  Hints={};
  local lang=GLOBAL_GetVar("Language");
- local numulvl=FILESYS_StartListDirectory("/language/",true,false,false,false,".*\\.ldef"); 
+ local numulvl=FILESYS_StartListDirectory("/language/",true,false,false,false,".*\\.lua"); 
  local counter=0;
  local langhint=TRANS_Str("language:hint");
 
  for index = 0, numulvl-1, 1 do
    local f=FILESYS_GetListDirectoryEntry(index);
    --Strip the extention
-   f=string.sub(f,1,string.len(f)-5);
+   f=f:match('^(.+)%..-$')
    TRANS_Add("LANGUAGE:FILE:VERSION","0");
    TRANS_Load(f);
    if TRANS_StrD("LANGUAGE:FILE:VERSION","0")+0>=GLOBAL_GetVar("CuboVersion") then

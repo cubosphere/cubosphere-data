@@ -61,7 +61,7 @@ function BuildEntries()
  local numsvs=FILESYS_StartListDirectory("/user/saves/"..GLOBAL_GetVar("CurrentEpisode").."/",true,false,false,false,".*\\.lua"); 
  local fnames={};
   for index = 0, numsvs-1, 1 do
-    fnames[index]=fnames[index] = FILESYS_GetListDirectoryEntry(index):match('^(.+)%..-$')
+    fnames[index] = FILESYS_GetListDirectoryEntry(index):match('^(.+)%..-$')
   end;
 
 
